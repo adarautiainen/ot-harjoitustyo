@@ -1,0 +1,113 @@
+commit 7354390a03ec63ead25ec5e1ed2b75fbbab066f1
+Author: Ada Rautiainen <ada.rautiainen@gmail.com>
+Date:   Wed Mar 15 11:19:37 2023 +0200
+
+    muutokset
+
+ tiedostoja/file2             | 0
+ tiedostoja/{file1 => file22} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 90260ca9d20529a52ca680bc3e18475db4bbcc02
+Author: Ada Rautiainen <ada.rautiainen@gmail.com>
+Date:   Wed Mar 15 11:15:58 2023 +0200
+
+    uudet
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 750bf52cfcb527907da6e1096b58e1a9ef86ba71
+Author: Ada Rautiainen <ada.rautiainen@gmail.com>
+Date:   Wed Mar 15 11:07:28 2023 +0200
+
+    muutokset
+
+ eka.txt    | 2 +-
+ kolmas.txt | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+commit 95e4dbedaa31d64508fcd545cc1a1f6799c9e5df
+Author: Ada Rautiainen <ada.rautiainen@gmail.com>
+Date:   Wed Mar 15 11:04:09 2023 +0200
+
+    uudelleennimeäminen
+
+ tiedosto.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 9f69afaf706f54a919b56373d330176428074468
+Author: Ada Rautiainen <ada.rautiainen@gmail.com>
+Date:   Wed Mar 15 11:02:44 2023 +0200
+
+    toinen.txt poistettu
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 7ea6bb2cc8244a560cea0bcfafc80ac438fda9a8
+Author: Ada Rautiainen <ada.rautiainen@gmail.com>
+Date:   Wed Mar 15 11:00:20 2023 +0200
+
+    poistettu ja lisätty tiedosto.txt
+
+ tiedosto.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 025c84d185ed70d867264351b2077f82abd3f23c
+Author: Ada Rautiainen <ada.rautiainen@gmail.com>
+Date:   Wed Mar 15 10:59:16 2023 +0200
+
+    tiedosto.txt tekstin lisäys
+
+ tiedosto.txt | 23 ++++++++++++++++++++++-
+ 1 file changed, 22 insertions(+), 1 deletion(-)
+
+commit b4ba4dda6568e0a60de21e9cfbdd4e3a7c5e36e8
+Author: Ada Rautiainen <ada.rautiainen@gmail.com>
+Date:   Wed Mar 15 10:26:19 2023 +0200
+
+    muutokset
+
+ jotain.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 3e783e768d283943001b20d34de4ff1a9aec92b9
+Author: Ada Rautiainen <ada.rautiainen@gmail.com>
+Date:   Wed Mar 15 10:25:08 2023 +0200
+
+    muokattu toinen.txt ja kolmas.txt
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit 89233b9bf6108c20649c88ebd0c29796d358ec8d
+Author: Ada Rautiainen <ada.rautiainen@gmail.com>
+Date:   Wed Mar 15 10:23:39 2023 +0200
+
+    luotu kolmas.txt
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 9d37d0dc0875be09a1f89584e896beb2755fba2f
+Author: Ada Rautiainen <ada.rautiainen@gmail.com>
+Date:   Wed Mar 15 10:15:42 2023 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit 901c43fdc950e99e1d4ec8e50359316a48181b3c
+Author: Ada Rautiainen <ada.rautiainen@gmail.com>
+Date:   Wed Mar 15 10:12:17 2023 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
