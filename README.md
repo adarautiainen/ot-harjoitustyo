@@ -1,5 +1,7 @@
-# README.md
+# Ohjelmistotekniikka, harjoitustyö
 
-- Tavallista tekstiä
-- **Lihavoitua tekstiä**
-- *Kursivoitua tekstiä*
+## Tehtävät
+
+**Viikko 1**
+- [komentorivi.txt](https://github.com/adarautiainen/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
+- [gitlog.txt](https://github.com/adarautiainen/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
