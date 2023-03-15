@@ -1,4 +1,4 @@
-# Ohjelmistotekniikka, muokkaus
+# Ohjelmistotekniikka
 
 ## Tehtävät
 
