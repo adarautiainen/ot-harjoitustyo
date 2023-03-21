@@ -2,7 +2,7 @@
 
 ## Dokumentaatio
 - [Vaatimusmäärittely](https://github.com/adarautiainen/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
-- [Tuntikirjanpitoo](https://github.com/adarautiainen/ot-harjoitustyo/blob/master/dokumentaatio/tuntikirjanpito.md)
+- [Tuntikirjanpito](https://github.com/adarautiainen/ot-harjoitustyo/blob/master/dokumentaatio/tuntikirjanpito.md)
 
 ### Laskaritehtävät
 
