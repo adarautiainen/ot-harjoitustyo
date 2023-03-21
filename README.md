@@ -1,7 +1,7 @@
 # Ohjelmistotekniikka
 
 ##Dokumentaatio
-- [Vaatimusmäärittely]
+- [Vaatimusmäärittely](https://github.com/adarautiainen/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
 
 
 ### Laskaritehtävät
