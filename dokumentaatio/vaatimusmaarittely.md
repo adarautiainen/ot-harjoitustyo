@@ -1,7 +1,7 @@
 # Vaatimusmäärittely
 
 ## Sovelluksen tarkoitus
-Sovelluksen avulla käyttäjät voivat tehdä jokaiselle kuukaudelle oman budjetin.
+Sovelluksen avulla käyttäjät voivat tehdä omia budjetteja.
 
 ## Käyttäjät
 Sovelluksella on vain yksi käyttäjärooli eli normaali käyttäjä.
