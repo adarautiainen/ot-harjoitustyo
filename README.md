@@ -10,4 +10,4 @@
 - [gitlog.txt](https://github.com/adarautiainen/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
 
 **Viikko 2**
-- tulossa
+- [Screenshot](https://github.com/adarautiainen/ot-harjoitustyo/blob/master/laskarit/viikko2/Screenshot%202023-03-21%20at%202.59.31%20PM.png)
