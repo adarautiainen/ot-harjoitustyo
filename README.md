@@ -11,4 +11,4 @@
 - [gitlog.txt](https://github.com/adarautiainen/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
 
 **Viikko 2**
-- 
+- tulossa
