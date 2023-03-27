@@ -4,7 +4,7 @@
 Sovelluksen avulla käyttäjät voivat tehdä omia budjetteja.
 
 ## Käyttäjät
-Sovelluksella on vain yksi käyttäjärooli eli normaali käyttäjä.
+Sovelluksella on vain yksi käyttäjärooli eli tavallinen käyttäjä.
 
 ## Alustavat toiminnallisuudet
 Ennen kirjautumista:
