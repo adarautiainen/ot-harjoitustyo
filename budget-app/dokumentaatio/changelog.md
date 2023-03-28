@@ -1,7 +1,7 @@
 # Changelog
 
 **Viikko 13:**
-- Tehty: SQLite-tietokantaa, käyttäjätoiminnot
+- Tehty: SQLite-tietokantaa, käyttäjätoimintoja ja niille testejä
 
 **Viikko 14:**
 
