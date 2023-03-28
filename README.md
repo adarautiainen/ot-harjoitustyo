@@ -4,7 +4,7 @@ Tämä sovellus on tehty Helsingin yliopiston kurssille Ohjelmistotekniikka.
 
 ## Dokumentaatio
 - [Vaatimusmäärittely](https://github.com/adarautiainen/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
-- [Tuntikirjanpito](https://github.com/adarautiainen/ot-harjoitustyo/blob/master/dokumentaatio/tuntikirjanpito.md)
+- [Tuntikirjanpito](https://github.com/adarautiainen/ot-harjoitustyo/blob/master/budget-app/dokumentaatio/tuntikirjanpito.md)
 - [Changelog](https://github.com/adarautiainen/ot-harjoitustyo/blob/master/budget-app/dokumentaatio/changelog.md)
 
 ## Laskaritehtävät
