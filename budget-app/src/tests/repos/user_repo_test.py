@@ -1,6 +1,6 @@
 import unittest
 from repos.user_repo import user_repo
-from budget_user import User
+from budget_user.user import User
 
 class TestUserRepo(unittest.TestCase):
     def setUp(self):
