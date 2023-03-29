@@ -2,6 +2,7 @@
 
 **Viikko 13:**
 - 28.3. tehty 4h
+- 29.3. tehty 4h
 
 **Viikko 14:**
 
