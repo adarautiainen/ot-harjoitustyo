@@ -1,8 +1,12 @@
 # Tuntikirjanpito
 
 **Viikko 13:**
-- 28.3. tehty 4h
-- 29.3. tehty 4h
+
+| Päivä| Aika/mitä tehty |
+|-----:|-----------------|
+| 28.3.|4h/käyttäjän toiminnot ja tietokantaa                |
+| 29.3.|4h/testit käyttäjälle ja tietokantaa           |
+| 31.3.|1h/dokumentaation päivitys                |
 
 **Viikko 14:**
 
