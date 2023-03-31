@@ -7,13 +7,3 @@ Tämä sovellus on tehty Helsingin yliopiston kurssille Ohjelmistotekniikka.
 - [Tuntikirjanpito](https://github.com/adarautiainen/ot-harjoitustyo/blob/master/budget-app/dokumentaatio/tuntikirjanpito.md)
 - [Changelog](https://github.com/adarautiainen/ot-harjoitustyo/blob/master/budget-app/dokumentaatio/changelog.md)
 
-## Laskaritehtävät
-**Viikko 1**
-- [komentorivi.txt](https://github.com/adarautiainen/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
-- [gitlog.txt](https://github.com/adarautiainen/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
-
-**Viikko 2**
-- [Screenshot](https://github.com/adarautiainen/ot-harjoitustyo/blob/master/laskarit/viikko2/Screenshot%202023-03-21%20at%202.59.31%20PM.png)
-
-**Viikko 3**
-- [Kaavio](https://github.com/adarautiainen/ot-harjoitustyo/tree/master/laskarit/viikko3)
