@@ -19,3 +19,6 @@
 **Viikko 18:**
 
 **Viikko 19:**
+
+**Yhteensä käytetty aika:**
+9h
