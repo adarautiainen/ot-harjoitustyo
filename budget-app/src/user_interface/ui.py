@@ -10,7 +10,17 @@ class UI:
     def start(self):
         self._login_view()
 
-    def _create_user(self):
+    def _login_view(self):
+        self._hide_current()
+
+        self._current = Login(
+            self._root,
+            self._create_user_view
+        )
+
+        self._current.pack()
+
+    def _create_user_view(self):
         self._hide_current()
 
         self._current = CreateUser(
@@ -20,15 +30,6 @@ class UI:
 
         self._current.pack()
 
-    def _login_view(self):
-        self._hide_current()
-
-        self._current = Login(
-            self._root,
-            self._create_user
-        )
-
-        self._current.pack()
 
     def _hide_current(self):
         if self._current:
