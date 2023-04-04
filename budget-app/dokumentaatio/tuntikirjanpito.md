@@ -7,7 +7,6 @@
 | 28.3.|4h/käyttäjän toiminnot ja tietokantaa                |
 | 29.3.|4h/testit käyttäjälle ja tietokantaa           |
 | 31.3.|1h/dokumentaation päivitys                |
-| yht. |9h             |
 
 **Viikko 14:**
 
@@ -20,3 +19,6 @@
 **Viikko 18:**
 
 **Viikko 19:**
+
+**Yhteensä käytetty aika:**
+9h
