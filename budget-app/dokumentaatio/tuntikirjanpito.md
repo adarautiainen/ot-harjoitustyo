@@ -9,6 +9,9 @@
 | 31.3.|1h/dokumentaation päivitys                |
 
 **Viikko 14:**
+| Päivä| Aika/mitä tehty |
+|-----:|-----------------|
+| 4.4. |3h/Graafinen käyttöliittymä               |
 
 **Viikko 15:**
 
@@ -21,4 +24,4 @@
 **Viikko 19:**
 
 **Yhteensä käytetty aika:**
-9h
+12h
