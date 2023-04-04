@@ -1,7 +1,7 @@
 import os
 from dotenv import load_dotenv
 
-path = "db/db.sqlite3"
+path = "db/db.sqlite3"  # pylint: disable=invalid-name
 
 dirname = os.path.dirname(__file__)
 
