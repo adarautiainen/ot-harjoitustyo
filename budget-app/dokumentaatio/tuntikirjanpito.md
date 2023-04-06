@@ -4,14 +4,15 @@
 
 | Päivä| Aika/mitä tehty |
 |-----:|-----------------|
-| 28.3.|4h/käyttäjän toiminnot ja tietokantaa                |
-| 29.3.|4h/testit käyttäjälle ja tietokantaa           |
-| 31.3.|1h/dokumentaation päivitys                |
+| 28.3.|4h/käyttäjän toiminnot ja tietokantaa  |
+| 29.3.|4h/testit käyttäjälle ja tietokantaa |
+| 31.3.|1h/dokumentaation päivitys |
 
 **Viikko 14:**
 | Päivä| Aika/mitä tehty |
 |-----:|-----------------|
-| 4.4. |3h/Graafinen käyttöliittymä               |
+| 4.4. |3h/Graafinen käyttöliittymä |
+| 6.4. |1h/Budjetti toimintoja  |
 
 **Viikko 15:**
 
