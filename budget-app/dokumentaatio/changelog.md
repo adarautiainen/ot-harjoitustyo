@@ -3,9 +3,8 @@
 **Viikko 13:**
 - Tehty: SQLite-tietokantaa, käyttäjätoiminnot ja niille testit
 
-**Viikko 14:**
-
-**Viikko 15:**
+**Viikot 14/15:**
+- Tehty: Budjettitoimintoja, graafista käyttöliittymää, pylint lisätty
 
 **Viikko 16:**
 
