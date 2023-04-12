@@ -1,7 +1,7 @@
 from tkinter import ttk, StringVar, constants
+from service.service_budget import service_budget, InvalidCredentialsError
 
-
-class Login:
+class LoginView:
 
     def __init__(self, root, login_handle, create_user):
         self._root = root
@@ -30,8 +30,9 @@ class Login:
         password = self._password_entry.get()
 
         try:
+            service_budget.login(username, password)
             self._login_handle()
-        except:
+        except InvalidCredentialsError:
             self._show_error("Wrong username or password")
 
     def _remove_error(self):

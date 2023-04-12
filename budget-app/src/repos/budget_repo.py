@@ -3,6 +3,7 @@ from budget_user.budget import Budget
 from repos.user_repo import user_repo
 from config import BUDGET_FILE_PATH
 
+
 class BudgetRepository:
 
     def __init__(self, file_path):
@@ -26,6 +27,11 @@ class BudgetRepository:
 
     def delete_every(self):
         self._write()
+
+    def delete_budget(self, budget_id):
+        budgets = self.find_budgets()
+        budgets_without_id = filter(lambda budget: budget.id != budget_id, budgets)
+        self._write(budgets_without_id)
 
     def _ensure_file(self):
         Path(self._file_path).touch()
@@ -57,8 +63,7 @@ class BudgetRepository:
             for budget in budgets:
                 username = budget.user.username if budget.user else ""
                 row = f"{budget.id};{budget.content};{username}"
-                file.write(row+"\n")
+                file.write(row + "\n")
 
 
 budget_repo = BudgetRepository(BUDGET_FILE_PATH)
-

@@ -1,5 +1,5 @@
 from tkinter import ttk, StringVar, constants
-
+from service.service_budget import service_budget, UsernameExistsError
 
 class CreateUser:
 
@@ -30,8 +30,9 @@ class CreateUser:
             return
 
         try:
+            service_budget.create_user(username, password)
             self._create_user()
-        except:
+        except UsernameExistsError:
             self._show_error(f"Username {username} already exists")
 
     def _show_error(self, message):

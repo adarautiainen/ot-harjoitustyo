@@ -1,5 +1,6 @@
-from user_interface.login_view import Login
+from user_interface.login_view import LoginView
 from user_interface.create_user import CreateUser
+from user_interface.budgets_view import BudgetsView
 
 
 class UI:
@@ -19,8 +20,9 @@ class UI:
     def _login_show(self):
         self._hide_current()
 
-        self._current = Login(
+        self._current = LoginView(
             self._root,
+            self._budgets_show(),
             self._create_user_show()
         )
 
@@ -31,9 +33,15 @@ class UI:
 
         self._current = CreateUser(
             self._root,
+            self._budgets_show(),
             self._login_show()
         )
 
+        self._current.pack()
+
+    def _budgets_show(self):
+        self._hide_current()
+        self._current = BudgetsView(self._root, self._login_show)
         self._current.pack()
 
 
