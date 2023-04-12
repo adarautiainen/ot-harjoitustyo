@@ -21,10 +21,6 @@ class LoginView:
     def destroy(self):
         self._frame.destroy()
 
-    def _show_error(self, message):
-        self._error_var.set(message)
-        self._error_label.grid()
-
     def _login_handler(self):
         username = self._username_entry.get()
         password = self._password_entry.get()
@@ -35,8 +31,24 @@ class LoginView:
         except InvalidCredentialsError:
             self._show_error("Wrong username or password")
 
+    def _show_error(self, message):
+        self._error_var.set(message)
+        self._error_label.grid()
+
     def _remove_error(self):
         self._error_label.grid_remove()
+
+    def _initialize_username(self):
+        username_label = ttk.Label(master=self._frame, text="Username")
+        self._username_entry = ttk.Entry(master=self._frame)
+        username_label.grid(padx=5, pady=5, sticky=constants.W)
+        self._username_entry.grid(padx=5, pady=5, sticky=constants.EW)
+
+    def _initialize_password(self):
+        password_label = ttk.Label(master=self._root)
+        self._password_entry = ttk.Entry(master=self._frame)
+        password_label.grid(padx=5, pady=5, sticky=constants.W)
+        self._password_entry.grid(padx=5, pady=5, sticky=constants.EW)
 
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)
@@ -70,15 +82,4 @@ class LoginView:
 
         self._remove_error()
 
-    def _initialize_username(self):
-        username_label = ttk.Label(master=self._frame, text="Username")
-        self._username_entry = ttk.Entry(master=self._frame)
-        username_label.grid(padx=5, pady=5, sticky=constants.W)
-        self._username_entry.grid(padx=5, pady=5, sticky=constants.EW)
-
-    def _initialize_password(self):
-        password_label = ttk.Label(master=self._root)
-        self._password_entry = ttk.Entry(master=self._frame)
-        password_label.grid(padx=5, pady=5, sticky=constants.W)
-        self._password_entry.grid(padx=5, pady=5, sticky=constants.EW)
 

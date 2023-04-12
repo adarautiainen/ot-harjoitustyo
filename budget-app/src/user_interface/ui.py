@@ -28,6 +28,11 @@ class UI:
 
         self._current.pack()
 
+    def _budgets_show(self):
+        self._hide_current()
+        self._current = BudgetsView(self._root, self._login_show)
+        self._current.pack()
+
     def _create_user_show(self):
         self._hide_current()
 
@@ -37,11 +42,6 @@ class UI:
             self._login_show()
         )
 
-        self._current.pack()
-
-    def _budgets_show(self):
-        self._hide_current()
-        self._current = BudgetsView(self._root, self._login_show)
         self._current.pack()
 
 

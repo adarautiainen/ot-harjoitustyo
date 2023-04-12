@@ -11,10 +11,11 @@ class BudgetListView:
 
         self._initialize()
 
-    def _initialize(self):
-        self._frame = ttk.Frame(master=self._root)
-        for budget in self._budgets:
-            self._initialize_budget(budget)
+    def pack(self):
+        self._frame.pack(fill=constants.X)
+
+    def destroy(self):
+        self._frame.destroy()
 
     def _initialize_budget(self, budget):
         budget_frame = ttk.Frame(master=self._frame)
@@ -24,11 +25,11 @@ class BudgetListView:
         budget_frame.grid_columnconfigure(0, weight=1)
         budget_frame.pack(fill=constants.X)
 
-    def pack(self):
-        self._frame.pack(fill=constants.X)
+    def _initialize(self):
+        self._frame = ttk.Frame(master=self._root)
+        for budget in self._budgets:
+            self._initialize_budget(budget)
 
-    def destroy(self):
-        self._frame.destroy()
 
 
 class BudgetsView:
@@ -43,23 +44,6 @@ class BudgetsView:
 
         self._initialize()
 
-    def _initialize(self):
-        self._frame = ttk.Frame(master=self._root)
-        self._budget_frame = ttk.Frame(master=self._frame)
-        self._initialize_header()
-        self._initialize_budget_list()
-        self._initialize_footer()
-
-        self._budget_frame.grid(
-            row=1,
-            column=0,
-            columnspan=2,
-            sticky=constants.EW
-        )
-
-        self._frame.grid_columnconfigure(0, weight=1, minsize=400)
-        self._frame.grid_columnconfigure(1, weight=0)
-
     def pack(self):
         self._frame.pack(fill=constants.X)
 
@@ -69,13 +53,6 @@ class BudgetsView:
     def _logout_handle(self):
         service_budget.logout()
         self._handle_logout()
-
-    def _handle_create(self):
-        budget_content = self._create_entry.get()
-        if budget_content:
-            service_budget.create_budget(budget_content)
-            self._initialize_budget_list()
-            self._create_entry.delete(0, constants.END)
 
     def _initialize_budget_list(self):
         if self._budget_view:
@@ -97,6 +74,13 @@ class BudgetsView:
         user_label.grid(row=0, column=0, padx=5, pady=5, sticky=constants.W)
         logout_button.grid(row=0, column=1, padx=5, pady=5, sticky=constants.EW)
 
+    def _handle_create(self):
+        budget_content = self._create_entry.get()
+        if budget_content:
+            service_budget.create_budget(budget_content)
+            self._initialize_budget_list()
+            self._create_entry.delete(0, constants.END)
+
     def _initialize_footer(self):
         self._create_entry = ttk.Entry(master=self._frame)
 
@@ -115,3 +99,24 @@ class BudgetsView:
             pady=5,
             sticky=constants.EW
         )
+
+    def _initialize(self):
+        self._frame = ttk.Frame(master=self._root)
+        self._budget_frame = ttk.Frame(master=self._frame)
+        self._initialize_header()
+        self._initialize_budget_list()
+        self._initialize_footer()
+
+        self._budget_frame.grid(
+            row=1,
+            column=0,
+            columnspan=2,
+            sticky=constants.EW
+        )
+
+        self._frame.grid_columnconfigure(0, weight=1, minsize=400)
+        self._frame.grid_columnconfigure(1, weight=0)
+
+
+
+

@@ -20,6 +20,18 @@ class BudgetService:
         self._budget_repo = budget_repo
         self._user_repo = user_repo
 
+    def create_budget(self, content):
+        budget = Budget(content=content, user=self._user)
+        return self._budget_repo.create(budget)
+
+    def get_budgets(self):
+        if not self._user:
+            return []
+
+        budgets = self._budget_repo.find_by_username(self._user.username)
+        budgets2 = filter(lambda budget: budget, budgets)
+        return list(budgets2)
+
     def login(self, username, password):
         user = self._user_repo.find_user(username)
         if not user or user.password != password:
@@ -28,25 +40,14 @@ class BudgetService:
         self._user = user
         return user
 
-    def logout(self):
-        self._user = None
-
     def current_user(self):
         return self._user
 
     def get_users(self):
         return self._user_repo.find_users()
 
-    def get_budgets(self):
-        if not self._user:
-            return []
-
-        budgets = self._budget_repo.find_by_username(self._user.username)
-        return list(budgets)
-
-    def create_budget(self, content):
-        budget = Budget(content=content, user=self._user)
-        return self._budget_repo.create(budget)
+    def logout(self):
+        self._user = None
 
     def create_user(self, username, password, login=True):
         user_exists = self._user_repo.find_user(username)
