@@ -15,6 +15,9 @@
 | 6.4. |1h/Budjetti toimintoja  |
 
 **Viikko 15:**
+| Päivä| Aika/mitä tehty |
+|-----:|-----------------|
+| 12.4. |3h/Budjetin toimintoja, graafista käyttöliittymää|
 
 **Viikko 16:**
 
@@ -25,4 +28,4 @@
 **Viikko 19:**
 
 **Yhteensä käytetty aika:**
-12h
+15h
