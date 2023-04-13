@@ -18,6 +18,7 @@
 | Päivä| Aika/mitä tehty |
 |-----:|-----------------|
 | 12.4. |3h/Budjetin toimintoja, graafista käyttöliittymää|
+| 13.4. |3h/Budjetin toiminnoille testejä, tietokannan hienosäätöä|
 
 **Viikko 16:**
 
