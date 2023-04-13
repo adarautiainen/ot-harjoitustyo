@@ -26,7 +26,7 @@ class BudgetRepository:
         return budget
 
     def delete_every(self):
-        self._write()
+        self._write([])
 
     def delete_budget(self, budget_id):
         budgets = self.find_budgets()
