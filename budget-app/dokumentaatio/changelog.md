@@ -4,7 +4,7 @@
 - Tehty: SQLite-tietokantaa, käyttäjätoiminnot ja niille testit
 
 **Viikot 14/15:**
-- Tehty: Budjettitoimintoja, graafista käyttöliittymää, pylint lisätty
+- Tehty: Budjettitoimintoja, graafista käyttöliittymää, pylint lisätty, budjettitoiminnoille testejä
 
 **Viikko 16:**
 
