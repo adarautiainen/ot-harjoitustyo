@@ -48,7 +48,7 @@ class BudgetRepository:
                 content = parts[1]
                 username = parts[2]
 
-                user = user_repo.find_username(
+                user = user_repo.find_user(
                     username) if username else None
 
                 budgets.append(
