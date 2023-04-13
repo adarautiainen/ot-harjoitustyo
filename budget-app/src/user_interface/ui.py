@@ -22,8 +22,8 @@ class UI:
 
         self._current = LoginView(
             self._root,
-            self._budgets_show(),
-            self._create_user_show()
+            self._budgets_show,
+            self._create_user_show
         )
 
         self._current.pack()
@@ -38,8 +38,8 @@ class UI:
 
         self._current = CreateUser(
             self._root,
-            self._budgets_show(),
-            self._login_show()
+            self._budgets_show,
+            self._login_show
         )
 
         self._current.pack()
