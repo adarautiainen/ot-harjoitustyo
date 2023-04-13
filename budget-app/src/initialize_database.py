@@ -1,5 +1,5 @@
-from database_connection import get_database_connection
-
+from database_connection import get_database_connection, get_budget_connection
+import sqlite3
 
 def drop_tables(connection):
     cursor = connection.cursor()
@@ -23,9 +23,12 @@ def create_tables(connection):
 
 def initialize_database():
     connection = get_database_connection()
+    connection2 = get_budget_connection()
+    drop_tables(connection2)
+    create_tables(connection2)
     drop_tables(connection)
     create_tables(connection)
 
 
-if __name__ == "__main__":
-    initialize_database()
+#if __name__ == "__main__":
+    #initialize_database()
