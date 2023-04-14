@@ -1,7 +1,4 @@
 from budget_user.budget import Budget
-from budget_user.user import User
-from repos.user_repo import user_repo
-from budget_user.budget import Budget
 from database_connection import get_database_connection
 
 
@@ -27,7 +24,7 @@ class BudgetRepository:
 
         self._connection.commit()
 
-    def create(self, budget):
+    def create_budget(self, budget):
         cursor = self._connection.cursor()
         cursor.execute(
             "insert into budgets(content, user, budget_id) values (?, ?, ?)",
@@ -42,7 +39,7 @@ class BudgetRepository:
         cursor.execute("select * from budgets")
         rows = cursor.fetchall()
 
-        return list(map(get_budget_row(), rows))
+        return list(map(get_budget_row, rows))
 
     def find_by_user(self, user):
         cursor = self._connection.cursor()
@@ -54,7 +51,7 @@ class BudgetRepository:
 
         return get_budget_row(row)
 
-    def delete_users(self):
+    def delete_budgets(self):
         cursor = self._connection.cursor()
         cursor.execute("delete from budgets")
         self._connection.commit()
