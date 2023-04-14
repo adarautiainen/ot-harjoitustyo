@@ -5,6 +5,10 @@ from repos.budget_repo import (budget_repo as default_budget_repo)
 from repos.user_repo import (user_repo as default_user_repo)
 
 
+def get_budget_row(row):
+    return Budget(row["content"], row["user"], row["budget_id"]) if row else None
+
+
 class UsernameExistsError(Exception):
     pass
 
@@ -22,15 +26,15 @@ class BudgetService:
 
     def create_budget(self, content):
         budget = Budget(content=content, user=self._user)
-        return self._budget_repo.create(budget)
+        return self._budget_repo.create_budget(budget)
 
     def get_budgets(self):
         if not self._user:
             return []
 
-        budgets = self._budget_repo.find_by_user(self._user.username)
-        budgets2 = filter(lambda budget: budget, budgets)
-        return list(budgets2)
+        rows = self._budget_repo.find_by_user(self._user.username)
+        budgets = [get_budget_row(row) for row in rows if row is not None]
+        return budgets
 
     def login(self, username, password):
         user = self._user_repo.find_user(username)

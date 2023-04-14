@@ -17,8 +17,8 @@ class BudgetRepository:
         cursor.execute('''
             create table budgets (
                 content text,
-                user text,
-                budget_id text
+                user text references users,
+                budget_id serial primary key
             );
         ''')
 
@@ -27,8 +27,8 @@ class BudgetRepository:
     def create_budget(self, budget):
         cursor = self._connection.cursor()
         cursor.execute(
-            "insert into budgets(content, user, budget_id) values (?, ?, ?)",
-            (budget.content, budget.user, budget.budget_id)
+            "insert into budgets (content, user, budget_id) values (?, ?, ?)",
+            (budget.content, budget.user.username, budget.budget_id)
         )
         self._connection.commit()
 
@@ -47,9 +47,17 @@ class BudgetRepository:
             "select * from budgets where user = ?",
             (user,)
         )
-        row = cursor.fetchone()
+        rows = cursor.fetchall()
 
-        return get_budget_row(row)
+        budgets = []
+        for row in rows:
+            budget_dict = {
+                "content": row["content"],
+                "user": row["user"],
+                "budget_id": row["budget_id"]
+            }
+            budgets.append(budget_dict)
+        return budgets
 
     def delete_budgets(self):
         cursor = self._connection.cursor()
@@ -58,4 +66,4 @@ class BudgetRepository:
 
 
 budget_repo = BudgetRepository(get_database_connection())
-budget_repo.create_table()
+
