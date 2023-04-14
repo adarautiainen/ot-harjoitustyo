@@ -7,7 +7,7 @@ from budget_user.budget import Budget
 
 class TestBudgetRepository(unittest.TestCase):
     def setUp(self):
-        budget_repo.delete_every()
+        budget_repo.delete_budgets()
         user_repo.delete_users()
 
         self.budget1 = Budget("test 1")
@@ -30,7 +30,7 @@ class TestBudgetRepository(unittest.TestCase):
         self.assertEqual(budgets[0].content, self.budget1.content)
         self.assertEqual(budgets[1].content, self.budget2.content)
 
-    def test_find_by_username(self):
+    def test_find_by_user(self):
         maija = user_repo.create(self.user_maija)
         elena = user_repo.create(self.user_elena)
 
@@ -51,11 +51,4 @@ class TestBudgetRepository(unittest.TestCase):
         self.assertEqual(len(elena_budgets), 1)
         self.assertEqual(elena_budgets[0].content, "test 2")
 
-    def test_delete_budget(self):
-        created = budget_repo.create_budget(self.budget1)
-        budgets = budget_repo.find_budgets()
-        self.assertEqual(len(budgets), 1)
 
-        budget_repo.delete_budget(created.id)
-        budgets = budget_repo.find_budgets()
-        self.assertEqual(len(budgets), 0)
