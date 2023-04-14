@@ -21,9 +21,9 @@ class BudgetListView:
         budget_frame = ttk.Frame(master=self._frame)
         label = ttk.Label(master=budget_frame, text=budget.content)
 
-        label.grid(row=0, column=0, padx=5, pady=5, sticky=constants.W)
+        label.grid(row=1, column=0, padx=5, pady=5)
         budget_frame.grid_columnconfigure(0, weight=1)
-        budget_frame.pack(fill=constants.X)
+        budget_frame.grid(fill=constants.X)
 
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)
@@ -70,8 +70,8 @@ class BudgetsView:
         user_label = ttk.Label(master=self._frame, text=f"Logged in as {self._user}")
         logout_button = ttk.Button(master=self._frame, text="Logout", command=self._handle_logout)
 
-        user_label.grid(row=0, column=0, padx=5, pady=5, sticky=constants.W)
-        logout_button.grid(row=0, column=1, padx=5, pady=5, sticky=constants.EW)
+        user_label.grid()
+        logout_button.grid()
 
     def _handle_create(self):
         budget_content = self._create_entry.get()

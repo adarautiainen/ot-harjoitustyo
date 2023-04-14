@@ -1,69 +1,64 @@
-from pathlib import Path
 from budget_user.budget import Budget
+from budget_user.user import User
 from repos.user_repo import user_repo
-from config import BUDGET_FILE_PATH
+from budget_user.budget import Budget
+from database_connection import get_database_connection
+
+
+def get_budget_row(row):
+    return Budget(row["content"], row["user"], row["budget_id"]) if row else None
 
 
 class BudgetRepository:
 
-    def __init__(self, file_path):
-        self._file_path = file_path
+    def __init__(self, connection):
+        self._connection = connection
 
-    def find_budgets(self):
-        return self._read()
+    def create_table(self):
+        cursor = self._connection.cursor()
+        cursor.execute("drop table if exists budgets")
+        cursor.execute('''
+            create table budgets (
+                content text,
+                user text,
+                budget_id text
+            );
+        ''')
 
-    def find_by_username(self, username):
-        budgets = self.find_budgets()
-        user_budgets = filter(
-            lambda budget: budget.user and budget.user.username == username, budgets
+        self._connection.commit()
+
+    def create(self, budget):
+        cursor = self._connection.cursor()
+        cursor.execute(
+            "insert into budgets(content, user, budget_id) values (?, ?, ?)",
+            (budget.content, budget.user, budget.budget_id)
         )
-        return list(user_budgets)
+        self._connection.commit()
 
-    def create_budget(self, budget):
-        budgets = self.find_budgets()
-        budgets.append(budget)
-        self._write(budgets)
         return budget
 
-    def delete_every(self):
-        self._write([])
+    def find_budgets(self):
+        cursor = self._connection.cursor()
+        cursor.execute("select * from budgets")
+        rows = cursor.fetchall()
 
-    def delete_budget(self, budget_id):
-        budgets = self.find_budgets()
-        budgets_without_id = filter(lambda budget: budget.id != budget_id, budgets)
-        self._write(budgets_without_id)
+        return list(map(get_budget_row(), rows))
 
-    def _ensure_file(self):
-        Path(self._file_path).touch()
+    def find_by_user(self, user):
+        cursor = self._connection.cursor()
+        cursor.execute(
+            "select * from budgets where user = ?",
+            (user,)
+        )
+        row = cursor.fetchone()
 
-    def _read(self):
-        budgets = []
-        self._ensure_file()
-        with open(self._file_path, encoding="utf-8") as file:
-            for row in file:
-                row = row.replace("\n", "")
-                parts = row.split(";")
+        return get_budget_row(row)
 
-                budget_id = parts[0]
-                content = parts[1]
-                username = parts[2]
-
-                user = user_repo.find_user(
-                    username) if username else None
-
-                budgets.append(
-                    Budget(content, user, budget_id)
-                )
-
-            return budgets
-
-    def _write(self, budgets):
-        self._ensure_file()
-        with open(self._file_path, "w", encoding="utf-8") as file:
-            for budget in budgets:
-                username = budget.user.username if budget.user else ""
-                row = f"{budget.id};{budget.content};{username}"
-                file.write(row + "\n")
+    def delete_users(self):
+        cursor = self._connection.cursor()
+        cursor.execute("delete from budgets")
+        self._connection.commit()
 
 
-budget_repo = BudgetRepository(BUDGET_FILE_PATH)
+budget_repo = BudgetRepository(get_database_connection())
+budget_repo.create_table()

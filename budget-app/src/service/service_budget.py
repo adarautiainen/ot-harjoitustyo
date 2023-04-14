@@ -22,13 +22,13 @@ class BudgetService:
 
     def create_budget(self, content):
         budget = Budget(content=content, user=self._user)
-        return self._budget_repo.create_budget(budget)
+        return self._budget_repo.create(budget)
 
     def get_budgets(self):
         if not self._user:
             return []
 
-        budgets = self._budget_repo.find_by_username(self._user.username)
+        budgets = self._budget_repo.find_by_user(self._user.username)
         budgets2 = filter(lambda budget: budget, budgets)
         return list(budgets2)
 
