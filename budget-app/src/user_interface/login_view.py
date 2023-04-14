@@ -30,11 +30,11 @@ class LoginView:
             service_budget.login(username, password)
             self._login_handle()
         except InvalidCredentialsError:
-            self._show_error("Wrong username or password")
+            self._show_error("Wrong username or password! Try again.")
 
     def _show_error(self, message):
         self._error_var.set(message)
-        self._error_label.grid()
+        self._error_label.grid(row=0, column=0, padx=5, pady=5)
 
     def _remove_error(self):
         self._error_label.grid_remove()
@@ -53,8 +53,6 @@ class LoginView:
 
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)
-        self._heading = ttk.Label(master=self._root, text="Welcome!")
-        self._heading.grid()
 
         self._error_var = StringVar(self._frame)
         self._error_label = ttk.Label(

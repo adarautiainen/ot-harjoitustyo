@@ -1,4 +1,5 @@
 from tkinter import ttk, constants
+from budget_user.budget import Budget
 from service.service_budget import service_budget
 
 
@@ -23,7 +24,7 @@ class BudgetListView:
 
         label.grid(row=1, column=0, padx=5, pady=5)
         budget_frame.grid_columnconfigure(0, weight=1)
-        budget_frame.grid(fill=constants.X)
+        budget_frame.grid()
 
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)
@@ -67,11 +68,15 @@ class BudgetsView:
         self._budget_view.grid()
 
     def _initialize_header(self):
-        user_label = ttk.Label(master=self._frame, text=f"Logged in as {self._user}")
+        user_label = ttk.Label(master=self._frame, text=f"Logged in as {self._user.username}")
         logout_button = ttk.Button(master=self._frame, text="Logout", command=self._handle_logout)
 
-        user_label.grid()
-        logout_button.grid()
+        user_label.grid(padx=5, pady=5)
+        logout_button.grid(row=3,
+                           column=1,
+                           padx=5,
+                           pady=5,
+                           sticky=constants.EW)
 
     def _handle_create(self):
         budget_content = self._create_entry.get()

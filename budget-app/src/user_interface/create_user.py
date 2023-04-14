@@ -26,19 +26,19 @@ class CreateUser:
         username = self._username_entry.get()
         password = self._password_entry.get()
 
-        if len(username) == 0 or len(password) == 0:
-            self._show_error("Username and password is required")
+        if not username or not password:
+            self._show_error("Username and password are required!")
             return
 
         try:
-            service_budget.create_user(username, password)
+            service_budget.create_user(username, password, login=True)
             self._create_user()
         except UsernameExistsError:
             self._show_error(f"Username {username} already exists")
 
     def _show_error(self, message):
         self._error_var.set(message)
-        self._error_label.grid()
+        self._error_label.grid(row=0, column=0, padx=5, pady=5)
 
     def _remove_error(self):
         self._error_label.grid_remove()
@@ -57,6 +57,9 @@ class CreateUser:
 
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)
+        self._heading = ttk.Label(master=self._frame, text="Create a user:")
+        self._heading.grid(padx=5, pady=5)
+
         self._error_var = StringVar(self._frame)
         self._error_label = ttk.Label(
             master=self._frame,
@@ -71,18 +74,11 @@ class CreateUser:
         create_button = ttk.Button(
             master=self._frame,
             text="Create user",
-            command=self._create_user
-        )
-
-        login_button = ttk.Button(
-            master=self._frame,
-            text="Login",
-            command=self._show_login
+            command=self._user_handler
         )
 
         self._frame.grid_columnconfigure(1, weight=1, minsize=400)
 
         create_button.grid(columnspan=2, sticky=(constants.E, constants.W), padx=5, pady=5)
-        login_button.grid(columnspan=2, sticky=(constants.E, constants.W), padx=5, pady=5)
 
         self._remove_error()
