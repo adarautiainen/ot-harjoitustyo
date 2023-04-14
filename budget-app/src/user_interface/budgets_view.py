@@ -11,8 +11,8 @@ class BudgetListView:
 
         self._initialize()
 
-    def pack(self):
-        self._frame.pack(fill=constants.X)
+    def grid(self, **kwargs):
+        self._frame.grid(kwargs)
 
     def destroy(self):
         self._frame.destroy()
@@ -31,7 +31,6 @@ class BudgetListView:
             self._initialize_budget(budget)
 
 
-
 class BudgetsView:
     def __init__(self, root, handle_logout):
         self._root = root
@@ -44,8 +43,8 @@ class BudgetsView:
 
         self._initialize()
 
-    def pack(self):
-        self._frame.pack(fill=constants.X)
+    def grid(self, **kwargs):
+        self._frame.grid(kwargs)
 
     def destroy(self):
         self._frame.destroy()
@@ -65,7 +64,7 @@ class BudgetsView:
             budgets
         )
 
-        self._budget_view.pack()
+        self._budget_view.grid()
 
     def _initialize_header(self):
         user_label = ttk.Label(master=self._frame, text=f"Logged in as {self._user}")
@@ -116,7 +115,3 @@ class BudgetsView:
 
         self._frame.grid_columnconfigure(0, weight=1, minsize=400)
         self._frame.grid_columnconfigure(1, weight=0)
-
-
-
-

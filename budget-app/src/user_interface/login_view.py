@@ -1,6 +1,7 @@
 from tkinter import ttk, StringVar, constants
 from service.service_budget import service_budget, InvalidCredentialsError
 
+
 class LoginView:
 
     def __init__(self, root, login_handle, create_user):
@@ -15,8 +16,8 @@ class LoginView:
 
         self._initialize()
 
-    def pack(self):
-        self._frame.pack(fill=constants.X)
+    def grid(self, **kwargs):
+        self._frame.grid(kwargs)
 
     def destroy(self):
         self._frame.destroy()
@@ -81,5 +82,3 @@ class LoginView:
         user_button.grid(padx=5, pady=5, sticky=constants.EW)
 
         self._remove_error()
-
-

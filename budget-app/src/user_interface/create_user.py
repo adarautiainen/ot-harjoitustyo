@@ -15,8 +15,8 @@ class CreateUser:
 
         self._initialize()
 
-    def pack(self):
-        self._frame.pack(fill=constants.X)
+    def grid(self, **kwargs):
+        self._frame.grid(kwargs)
 
     def destroy(self):
         self._frame.destroy()
