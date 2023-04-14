@@ -50,7 +50,7 @@ class CreateUser:
         self._username_entry.grid(row=1, column=1, sticky=(constants.E, constants.W), padx=5, pady=5)
 
     def _initialize_password(self):
-        password_label = ttk.Label(master=self._root)
+        password_label = ttk.Label(master=self._frame, text="Password")
         self._password_entry = ttk.Entry(master=self._frame)
         password_label.grid(row=2, column=0, padx=5, pady=5)
         self._password_entry.grid(row=2, column=1, sticky=(constants.E, constants.W), padx=5, pady=5)
@@ -80,7 +80,7 @@ class CreateUser:
             command=self._show_login
         )
 
-        self._frame.grid_columnconfigure(0, weight=1, minsize=400)
+        self._frame.grid_columnconfigure(1, weight=1, minsize=400)
 
         create_button.grid(columnspan=2, sticky=(constants.E, constants.W), padx=5, pady=5)
         login_button.grid(columnspan=2, sticky=(constants.E, constants.W), padx=5, pady=5)

@@ -46,7 +46,7 @@ class LoginView:
         self._username_entry.grid(row=1, column=1, sticky=(constants.E, constants.W), padx=5, pady=5)
 
     def _initialize_password(self):
-        password_label = ttk.Label(master=self._root, text="Password")
+        password_label = ttk.Label(master=self._frame, text="Password")
         self._password_entry = ttk.Entry(master=self._frame)
         password_label.grid(row=2, column=0, padx=5, pady=5)
         self._password_entry.grid(row=2, column=1, sticky=(constants.E, constants.W), padx=5, pady=5)
