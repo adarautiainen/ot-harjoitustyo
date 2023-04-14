@@ -70,7 +70,7 @@ class LoginView:
         login_button = ttk.Button(
             master=self._frame,
             text="Login",
-            command=self._login_handle
+            command=self._login_handler
         )
 
         user_button = ttk.Button(
