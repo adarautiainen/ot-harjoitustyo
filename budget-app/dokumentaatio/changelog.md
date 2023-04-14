@@ -1,15 +1,14 @@
 # Changelog
 
-**Viikko 13:**
+**Viikko 3:**
 - Tehty: SQLite-tietokantaa, käyttäjätoiminnot ja niille testit
 
-**Viikot 14/15:**
+**Viikko 4:**
 - Tehty: Budjettitoimintoja, graafista käyttöliittymää, pylint lisätty, budjettitoiminnoille testejä
 
-**Viikko 16:**
+**Viikko 5:**
 
-**Viikko 17:**
+**Viikko 6:**
 
-**Viikko 18:**
+**Viikko 7:**
 
-**Viikko 19:**
