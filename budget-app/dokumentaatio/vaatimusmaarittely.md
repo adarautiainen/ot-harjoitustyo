@@ -8,11 +8,11 @@ Sovelluksella on vain yksi käyttäjärooli eli tavallinen käyttäjä.
 
 ## Alustavat toiminnallisuudet
 Ennen kirjautumista:
-- Käyttäjä voi luoda tunnuksen
-- Käyttäjä voi kirjautua sisään
+- Käyttäjä voi luoda tunnuksen (tehty)
+- Käyttäjä voi kirjautua sisään (tehty)
 
 Kirjautumisen jälkeen:
-- Käyttäjä näkee omat budjetit
-- Käyttäjä voi luoda uuden budjetin
+- Käyttäjä näkee omat budjetit (osittain tehty)
+- Käyttäjä voi luoda uuden budjetin (osittain tehty)
 - Käyttäjä voi poistaa luomansa budjetin
-- Käyttäjä voi kirjautua ulos
+- Käyttäjä voi kirjautua ulos (tehty)
