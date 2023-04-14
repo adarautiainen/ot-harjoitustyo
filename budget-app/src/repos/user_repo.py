@@ -56,4 +56,4 @@ class UserRepository:
 
 
 user_repo = UserRepository(get_database_connection())
-user_repo.create_table()
+#user_repo.create_table()
