@@ -22,7 +22,7 @@ class BudgetService:
 
     def create_budget(self, content):
         budget = Budget(content=content, user=self._user)
-        return self._budget_repo.create(budget)
+        return self._budget_repo.create_budget(budget)
 
     def get_budgets(self):
         if not self._user:
