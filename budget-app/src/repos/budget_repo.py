@@ -66,4 +66,3 @@ class BudgetRepository:
 
 
 budget_repo = BudgetRepository(get_database_connection())
-
