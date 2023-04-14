@@ -11,6 +11,17 @@ class UserRepository:
     def __init__(self, connection):
         self._connection = connection
 
+    def create_table(self):
+        cursor = self._connection.cursor()
+        cursor.execute('''
+            create table users (
+                username text primary key,
+                password text
+            );
+        ''')
+
+        self._connection.commit()
+
     def create(self, user):
         cursor = self._connection.cursor()
         cursor.execute(
@@ -45,3 +56,4 @@ class UserRepository:
 
 
 user_repo = UserRepository(get_database_connection())
+user_repo.create_table()
