@@ -22,6 +22,9 @@
 | 14.4. |5h/Budjetin toimintojen päivittäminen, graafisen liittymän ulkoasun säätö, budjettitestejä|
 
 **Viikko 16:**
+| Päivä| Aika/mitä tehty |
+|-----:|-----------------|
+| 17.4. |1h/Korjattu koodia niin, että kaikki testit toimii|
 
 **Viikko 17:**
 
@@ -30,4 +33,4 @@
 **Viikko 19:**
 
 **Yhteensä käytetty aika:**
-24h
+25h
