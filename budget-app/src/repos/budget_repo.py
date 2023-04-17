@@ -1,5 +1,4 @@
 from budget_user.budget import Budget
-from budget_user.user import User
 from database_connection import get_database_connection
 
 
