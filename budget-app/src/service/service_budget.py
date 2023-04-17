@@ -32,8 +32,7 @@ class BudgetService:
         if not self._user:
             return []
 
-        rows = self._budget_repo.find_by_user(self._user.username)
-        budgets = [get_budget_row(row) for row in rows if row is not None]
+        budgets = self._budget_repo.find_by_user(self._user.username)
         return budgets
 
     def login(self, username, password):

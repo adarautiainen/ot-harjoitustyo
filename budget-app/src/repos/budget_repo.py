@@ -1,4 +1,5 @@
 from budget_user.budget import Budget
+from budget_user.user import User
 from database_connection import get_database_connection
 
 
@@ -28,7 +29,8 @@ class BudgetRepository:
         cursor = self._connection.cursor()
         cursor.execute(
             "insert into budgets (content, user, budget_id) values (?, ?, ?)",
-            (budget.content, budget.user.username, budget.budget_id)
+            (budget.content, budget.user.username if hasattr(budget.user, 'username') else '',
+             budget.budget_id)
         )
         self._connection.commit()
 
@@ -51,12 +53,10 @@ class BudgetRepository:
 
         budgets = []
         for row in rows:
-            budget_dict = {
-                "content": row["content"],
-                "user": row["user"],
-                "budget_id": row["budget_id"]
-            }
-            budgets.append(budget_dict)
+            budget = Budget(content=row[0], user=row[1],
+                            budget_id=row[2])
+            budgets.append(budget)
+
         return budgets
 
     def delete_budgets(self):

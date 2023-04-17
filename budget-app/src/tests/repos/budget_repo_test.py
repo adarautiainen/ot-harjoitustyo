@@ -37,14 +37,14 @@ class TestBudgetRepository(unittest.TestCase):
         budget_repo.create_budget(Budget(content="test 1", user=maija))
         budget_repo.create_budget(Budget(content="test 2", user=elena))
 
-        maija_budgets = budget_repo.find_by_username(
+        maija_budgets = budget_repo.find_by_user(
             self.user_maija.username
         )
 
         self.assertEqual(len(maija_budgets), 1)
         self.assertEqual(maija_budgets[0].content, "test 1")
 
-        elena_budgets = budget_repo.find_by_username(
+        elena_budgets = budget_repo.find_by_user(
             self.user_elena.username
         )
 
