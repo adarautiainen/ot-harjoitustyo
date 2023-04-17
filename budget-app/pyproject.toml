@@ -9,7 +9,7 @@ packages = [{include = "budget_app"}]
 [tool.poetry.dependencies]
 python = "^3.8"
 python-dotenv = "^1.0.0"
-invoke = "^^.7.3"
+invoke = "^2.0.0"
 
 
 [tool.poetry.group.dev.dependencies]
