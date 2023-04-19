@@ -57,8 +57,6 @@ class CreateUser:
 
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)
-        self._heading = ttk.Label(master=self._frame, text="Create a user:")
-        self._heading.grid(padx=5, pady=5)
 
         self._error_var = StringVar(self._frame)
         self._error_label = ttk.Label(
@@ -66,10 +64,12 @@ class CreateUser:
             textvariable=self._error_var,
             foreground="orange"
         )
-        self._error_label.grid(padx=5, pady=5)
+        self._error_label.grid(row=1, column=0, columnspan=2,padx=5, pady=5)
 
         self._initialize_username()
         self._initialize_password()
+
+        ttk.Label(master=self._frame).grid(row=2)
 
         create_button = ttk.Button(
             master=self._frame,

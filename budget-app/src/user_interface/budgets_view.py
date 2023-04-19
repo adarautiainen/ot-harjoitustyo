@@ -26,6 +26,7 @@ class BudgetListView:
         delete_button = ttk.Button(
             master=budget_frame,
             text="Delete",
+            width=5,
             command=lambda : self._delete_budget(budget.budget_id)
         )
 
