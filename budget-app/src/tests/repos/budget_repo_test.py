@@ -30,6 +30,15 @@ class TestBudgetRepository(unittest.TestCase):
         self.assertEqual(budgets[0].content, self.budget1.content)
         self.assertEqual(budgets[1].content, self.budget2.content)
 
+    def test_delete_budget(self):
+        maija = user_repo.create(self.user_maija)
+        created = budget_repo.create_budget(Budget(content="test 1", user=maija))
+        budgets = budget_repo.find_budgets()
+        self.assertEqual(len(budgets), 1)
+        budget_repo.delete_budget(created.budget_id)
+        budgets = budget_repo.find_budgets()
+        self.assertEqual(len(budgets), 0)
+
     def test_find_by_user(self):
         maija = user_repo.create(self.user_maija)
         elena = user_repo.create(self.user_elena)
