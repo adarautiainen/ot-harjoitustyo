@@ -64,6 +64,12 @@ class BudgetRepository:
 
         return budgets
 
+    def delete_budget(self, budget_id):
+        cursor = self._connection.cursor()
+        cursor.execute("delete from budgets where budget_id = ?",
+                       (budget_id,))
+        self._connection.commit()
+
     def delete_budgets(self):
         cursor = self._connection.cursor()
         cursor.execute("delete from budgets")

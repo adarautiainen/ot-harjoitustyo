@@ -52,6 +52,9 @@ class BudgetService:
     def logout(self):
         self._user = None
 
+    def delete(self, budget_id):
+        self._budget_repo.delete_budget(budget_id)
+
     def create_user(self, username, password, login=True):
         user_exists = self._user_repo.find_user(username)
         if user_exists:

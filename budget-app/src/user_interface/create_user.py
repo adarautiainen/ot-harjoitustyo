@@ -77,8 +77,15 @@ class CreateUser:
             command=self._user_handler
         )
 
+        login_button = ttk.Button(
+            master=self._frame,
+            text="Back to login page",
+            command=self._show_login
+        )
+
         self._frame.grid_columnconfigure(1, weight=1, minsize=400)
 
         create_button.grid(columnspan=2, sticky=(constants.E, constants.W), padx=5, pady=5)
+        login_button.grid(columnspan=2, sticky=(constants.E, constants.W), padx=5, pady=5)
 
         self._remove_error()

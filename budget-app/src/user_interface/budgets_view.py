@@ -5,10 +5,11 @@ from service.service_budget import service_budget
 
 class BudgetListView:
 
-    def __init__(self, root, budgets):
+    def __init__(self, root, budgets, delete_budget):
         self._root = root
         self._budgets = budgets
         self._frame = None
+        self._delete_budget = delete_budget
 
         self._initialize()
 
@@ -22,7 +23,14 @@ class BudgetListView:
         budget_frame = ttk.Frame(master=self._frame)
         label = ttk.Label(master=budget_frame, text=budget.content)
 
+        delete_button = ttk.Button(
+            master=budget_frame,
+            text="Delete",
+            command=lambda : self._delete_budget(budget.budget_id)
+        )
+
         label.grid(row=1, column=0, padx=5, pady=5)
+        delete_button.grid(row=1, column=3,padx=5,pady=5,sticky=constants.EW)
         budget_frame.grid_columnconfigure(0, weight=1)
         budget_frame.grid()
 
@@ -54,6 +62,10 @@ class BudgetsView:
         service_budget.logout()
         self._handle_logout()
 
+    def _delete_budget(self, budget_id):
+        service_budget.delete(budget_id)
+        self._initialize_budget_list()
+
     def _initialize_budget_list(self):
         if self._budget_view:
             self._budget_view.destroy()
@@ -62,7 +74,8 @@ class BudgetsView:
 
         self._budget_view = BudgetListView(
             self._budget_frame,
-            budgets
+            budgets,
+            self._delete_budget
         )
 
         self._budget_view.grid()
