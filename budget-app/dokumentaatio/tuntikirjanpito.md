@@ -25,6 +25,7 @@
 | Päivä| Aika/mitä tehty |
 |-----:|-----------------|
 | 17.4. |1h/Korjattu koodia niin, että kaikki testit toimii|
+| 19.4. |3h/Lisätty budjetin poistotoiminto, lisää testejä|
 
 **Viikko 17:**
 
@@ -33,4 +34,4 @@
 **Viikko 19:**
 
 **Yhteensä käytetty aika:**
-25h
+28h
