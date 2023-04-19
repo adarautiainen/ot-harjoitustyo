@@ -15,7 +15,7 @@ class TestBudgetRepository(unittest.TestCase):
         self.user_maija = User("maija", "maija789")
         self.user_elena = User("elena", "elena789")
 
-    def test_create(self):
+    def test_create_budget(self):
         budget_repo.create_budget(self.budget1)
         budgets = budget_repo.find_budgets()
         self.assertEqual(len(budgets), 1)
