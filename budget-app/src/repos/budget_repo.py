@@ -26,6 +26,12 @@ class BudgetRepository:
 
     def create_budget(self, budget):
         cursor = self._connection.cursor()
+        cursor.execute("select name from sqlite_master where type='table' and name='budgets'")
+        table_exists = cursor.fetchone() is not None
+
+        if not table_exists:
+            self.create_table()
+
         cursor.execute(
             "insert into budgets (content, user, budget_id) values (?, ?, ?)",
             (budget.content, budget.user.username if hasattr(budget.user, 'username') else '',
