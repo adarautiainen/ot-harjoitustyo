@@ -6,7 +6,8 @@ from repos.user_repo import (user_repo as default_user_repo)
 
 
 def get_budget_row(row):
-    return Budget(row["content"], row["user"], row["budget_id"]) if row else None
+    return Budget(row["month"], row["income"], row["expense"],
+                  row["user"], row["budget_id"]) if row else None
 
 
 class UsernameExistsError(Exception):
@@ -24,8 +25,8 @@ class BudgetService:
         self._budget_repo = budget_repo
         self._user_repo = user_repo
 
-    def create_budget(self, content):
-        budget = Budget(content=content, user=self._user)
+    def create_budget(self, month, income, expense):
+        budget = Budget(month=month, income=income, expense=expense, user=self._user)
         return self._budget_repo.create_budget(budget)
 
     def get_budgets(self):
