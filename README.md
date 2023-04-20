@@ -1,6 +1,6 @@
 # Budjetointisovellus
 
-Sovelluksen avulla käyttjät voivat tehdä omia budjetteja. Tämä sovellus on tehty Helsingin yliopiston kurssille Ohjelmistotekniikka. 
+Sovelluksen avulla käyttäjät voivat tehdä omia budjetteja. Tämä sovellus on tehty Helsingin yliopiston kurssille Ohjelmistotekniikka. 
 
 ## Dokumentaatio
 - [Vaatimusmäärittely](https://github.com/adarautiainen/ot-harjoitustyo/blob/master/budget-app/dokumentaatio/vaatimusmaarittely.md)
