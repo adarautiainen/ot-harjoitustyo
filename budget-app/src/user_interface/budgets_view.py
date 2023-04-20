@@ -1,5 +1,4 @@
 from tkinter import ttk, constants
-from budget_user.budget import Budget
 from service.service_budget import service_budget
 
 
@@ -21,13 +20,13 @@ class BudgetListView:
 
     def _initialize_budget(self, budget):
         budget_frame = ttk.Frame(master=self._frame)
-        label = ttk.Label(master=budget_frame, text=budget.content)
+        label = ttk.Label(master=budget_frame, text=budget.month)
 
         delete_button = ttk.Button(
             master=budget_frame,
             text="Delete",
             width=5,
-            command=lambda : self._delete_budget(budget.budget_id)
+            command=lambda: self._delete_budget(budget.budget_id)
         )
 
         label.grid(row=1, column=0, padx=5, pady=5)
@@ -50,6 +49,9 @@ class BudgetsView:
         self._create_entry = None
         self._budget_frame = None
         self._budget_view = None
+        self._month_entry = None
+        self._income_entry = None
+        self._expense_entry = None
 
         self._initialize()
 
@@ -82,37 +84,64 @@ class BudgetsView:
         self._budget_view.grid()
 
     def _initialize_header(self):
-        user_label = ttk.Label(master=self._frame, text=f"Logged in as {self._user.username}")
+        user_label = ttk.Label(master=self._frame, text=f"You are logged in as {self._user.username}")
         logout_button = ttk.Button(master=self._frame, text="Logout", command=self._handle_logout)
 
         user_label.grid(padx=5, pady=5)
-        logout_button.grid(row=3,
-                           column=1,
+        logout_button.grid(row=4,
+                           column=2,
                            padx=5,
                            pady=5,
                            sticky=constants.EW)
 
     def _handle_create(self):
-        budget_content = self._create_entry.get()
-        if budget_content:
-            service_budget.create_budget(budget_content)
+        month = self._month_entry.get()
+        income = self._income_entry.get()
+        expense = self._expense_entry.get()
+        if month and income and expense:
+            service_budget.create_budget(month, income, expense)
             self._initialize_budget_list()
-            self._create_entry.delete(0, constants.END)
+            self._month_entry.delete(0, constants.END)
+            self._income_entry.delete(0, constants.END)
+            self._expense_entry.delete(0, constants.END)
 
     def _initialize_footer(self):
-        self._create_entry = ttk.Entry(master=self._frame)
+        self._month_entry = ttk.Entry(master=self._frame)
+        self._income_entry = ttk.Entry(master=self._frame)
+        self._expense_entry = ttk.Entry(master=self._frame)
+
+        month_label = ttk.Label(master=self._frame, text="Month:")
+        income_label = ttk.Label(master=self._frame, text="Income:")
+        expense_label = ttk.Label(master=self._frame, text="Expense:")
 
         create_button = ttk.Button(master=self._frame, text="Create", command=self._handle_create)
-        self._create_entry.grid(
+        month_label.grid(row=2, column=0, padx=5, pady=2, sticky=constants.W)
+        income_label.grid(row=3, column=0, padx=5, pady=2, sticky=constants.W)
+        expense_label.grid(row=4, column=0, padx=5, pady=2, sticky=constants.W)
+        self._month_entry.grid(
             row=2,
             column=0,
             padx=5,
             pady=5,
             sticky=constants.EW
         )
+        self._income_entry.grid(
+            row=3,
+            column=0,
+            padx=5,
+            pady=5,
+            sticky=constants.EW
+        )
+        self._expense_entry.grid(
+            row=4,
+            column=0,
+            padx=5,
+            pady=5,
+            sticky=constants.EW
+        )
         create_button.grid(
-            row=2,
-            column=1,
+            row=3,
+            column=2,
             padx=5,
             pady=5,
             sticky=constants.EW
