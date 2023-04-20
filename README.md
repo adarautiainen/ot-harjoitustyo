@@ -1,12 +1,16 @@
 # Budjetointisovellus
 
-Tämä sovellus on tehty Helsingin yliopiston kurssille Ohjelmistotekniikka. 
+Sovelluksen avulla käyttjät voivat tehdä omia budjetteja. Tämä sovellus on tehty Helsingin yliopiston kurssille Ohjelmistotekniikka. 
 
 ## Dokumentaatio
 - [Vaatimusmäärittely](https://github.com/adarautiainen/ot-harjoitustyo/blob/master/budget-app/dokumentaatio/vaatimusmaarittely.md)
 - [Tuntikirjanpito](https://github.com/adarautiainen/ot-harjoitustyo/blob/master/budget-app/dokumentaatio/tuntikirjanpito.md)
 - [Changelog](https://github.com/adarautiainen/ot-harjoitustyo/blob/master/budget-app/dokumentaatio/changelog.md)
 - [Arkkitehtuuri](https://github.com/adarautiainen/ot-harjoitustyo/blob/master/budget-app/dokumentaatio/arkkitehtuuri.md)
+
+## Asennus
+- Riippuvuuksien asentaminen komennolla: ```poetry install```
+- Alustustoimenpiteet komennolla: ```poetry run invoke build```
 
 ## Komennot
 - Ohjelman suorittaminen onnistuu komennolla: ```poetry run invoke start```
