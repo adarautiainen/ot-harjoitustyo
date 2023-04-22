@@ -3,6 +3,7 @@ from budget_user.budget import Budget
 from budget_user.user import User
 from service.service_budget import BudgetService, UsernameExistsError, InvalidCredentialsError
 
+
 class FakeBudgetRepo:
     def __init__(self, budgets=None):
         self.budgets = budgets or []
@@ -50,8 +51,8 @@ class TestBudgetService(unittest.TestCase):
     def setUp(self):
         self.service_budget = BudgetService(budget_repo=FakeBudgetRepo(), user_repo=FakeUserRepo())
         self.user_maija = User(username="maija", password="maija789")
-        self.budget1 = Budget(content="budget1", user=self.user_maija)
-        self.budget2 = Budget(content="budget2", user=self.user_maija)
+        self.budget1 = Budget(month="may", income="300", expense="100")
+        self.budget2 = Budget(month="june", income="400", expense="100")
 
     def login(self, user):
         self.service_budget.login(user.username, user.password)
@@ -62,11 +63,11 @@ class TestBudgetService(unittest.TestCase):
             self.user_maija.password
         )
         self.login(self.user_maija)
-        self.service_budget.create_budget(self.budget1.content)
+        self.service_budget.create_budget("may", "300", "100")
         budgets = self.service_budget.get_budgets()
 
         self.assertEqual(len(budgets), 1)
-        self.assertEqual(budgets[0].content, "budget1")
+        self.assertEqual(budgets[0].month, "may")
         self.assertEqual(budgets[0].user.username, self.user_maija.username)
 
     def test_get_budgets(self):
@@ -75,12 +76,12 @@ class TestBudgetService(unittest.TestCase):
             self.user_maija.password
         )
         self.login(self.user_maija)
-        self.service_budget.create_budget(self.budget1.content)
-        self.service_budget.create_budget(self.budget2.content)
+        self.service_budget.create_budget(self.budget1.month, self.budget1.income, self.budget1.expense)
+        self.service_budget.create_budget(self.budget2.month, self.budget2.income, self.budget2.expense)
         budgets = self.service_budget.get_budgets()
 
         self.assertEqual(len(budgets), 2)
-        self.assertEqual(budgets[0].content, self.budget1.content)
+        self.assertEqual(budgets[0].month, self.budget1.month)
 
     def test_login_valid(self):
         self.service_budget.create_user(
