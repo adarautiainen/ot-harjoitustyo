@@ -1,4 +1,3 @@
-from tkinter import *
 from tkinter import Tk
 from user_interface.ui import UI
 

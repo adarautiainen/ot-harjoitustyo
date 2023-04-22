@@ -9,5 +9,3 @@ class Budget:
         self.expense = expense
         self.user = user
         self.budget_id = budget_id or str(uuid.uuid4())
-
-

@@ -3,7 +3,8 @@ from database_connection import get_database_connection
 
 
 def get_budget_row(row):
-    return Budget(row["month"], row["income"], row["expense"], row["user"], row["budget_id"]) if row else None
+    return Budget(row["month"], row["income"], row["expense"],
+                  row["user"], row["budget_id"]) if row else None
 
 
 class BudgetRepository:
@@ -61,7 +62,8 @@ class BudgetRepository:
 
         budgets = []
         for row in rows:
-            budget = Budget(month=row[0], income=row[1], expense=row[2], user=row[3], budget_id=row[4])
+            budget = Budget(month=row[0], income=row[1], expense=row[2],
+                            user=row[3], budget_id=row[4])
             budgets.append(budget)
 
         return budgets
