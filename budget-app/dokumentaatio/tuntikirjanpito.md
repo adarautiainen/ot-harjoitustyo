@@ -27,6 +27,7 @@
 | 17.4. |1h/Korjattu koodia niin, että kaikki testit toimii|
 | 19.4. |3h/Lisätty budjetin poistotoiminto, lisää testejä|
 | 20.4. |5h/Muokattu budjettia budjetiksi (kuukausi, tulot/menot)|
+| 22.4. |1h/Muokattu testit uusille ominaisuuksille|
 
 **Viikko 17:**
 
@@ -35,4 +36,4 @@
 **Viikko 19:**
 
 **Yhteensä käytetty aika:**
-33h
+34h
