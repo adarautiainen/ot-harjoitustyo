@@ -16,8 +16,8 @@ sequenceDiagram
   participant BudgetRepository
   participant budget
   User->>UI: click "Create"
-  UI->>BudgetService: create_budget("500€")
-  BudgetService->>budget: Budget("500€", maija)
+  UI->>BudgetService: create_budget("may", "1000", "500€")
+  BudgetService->>budget: Budget("may", "1000", "500", maija)
   BudgetService->>BudgetRepository: create_budget(budget)
   BudgetRepository-->>BudgetService: budget
   BudgetService-->>UI: budget
