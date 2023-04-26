@@ -32,11 +32,11 @@
 **Viikko 17:**
 | Päivä| Aika/mitä tehty |
 |-----:|-----------------|
-| 26.4. |2h/Docstring-dokumentaatio, arkkitehtuurikuvaus|
+| 26.4. |4h/Docstring-dokumentaatio, arkkitehtuurikuvaus, ulkoasun muokkausta, budjettinäkymä paremmaksi|
 
 **Viikko 18:**
 
 **Viikko 19:**
 
 **Yhteensä käytetty aika:**
-36h
+38h
