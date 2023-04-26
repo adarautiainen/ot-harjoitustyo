@@ -22,7 +22,43 @@ classDiagram
       }
 ```
 
-## Sekvenssikaavio
+## Päätoiminnallisuudet sekvenssikaavioina
+
+### Kirjautuminen
+
+```mermaid
+sequenceDiagram
+  actor User
+  participant UI
+  participant BudgetService
+  participant UserRepository
+  User->>UI: click "Login" button
+  UI->>BudgetService: login("maija", "maija789")
+  BudgetService->>UserRepository: find_by_user("maija")
+  UserRepository-->>BudgetService: user
+  BudgetService-->>UI: user
+  UI->UI: budgets_show()
+```
+
+### Käyttäjän luominen
+
+```mermaid
+sequenceDiagram
+  actor User
+  participant UI
+  participant BudgetService
+  participant UserRepository
+  participant maija
+  User->>UI: click "Create user" button
+  UI->>BudgetService: create_user("maija", "maija789")
+  BudgetService->>UserRepository: find_by_user("maija")
+  UserRepository-->>BudgetService: None
+  BudgetService->>maija: User("maija", "maija789")
+  BudgetService->>UserRepository: create(maija)
+  UserRepository-->>BudgetService: user
+  BudgetService-->>UI: user
+  UI->>UI: budgets_show()
+```
 
 ### Budjetin luominen
 
