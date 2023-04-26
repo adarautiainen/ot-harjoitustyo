@@ -8,11 +8,22 @@ def get_budget_row(row):
 
 
 class BudgetRepository:
+    """Tietokantaoperaatiosta vastaava luokka liittyen budjetteihin.
+    """
 
     def __init__(self, connection):
+        """Luokan konstruktori.
+
+        Args:
+            connection: Tietokantayhteyden connection-olio
+        """
+
         self._connection = connection
 
     def create_table(self):
+        """Luo uuden tietokantataulun.
+        """
+
         cursor = self._connection.cursor()
         cursor.execute("drop table if exists budgets")
         cursor.execute('''
@@ -28,6 +39,15 @@ class BudgetRepository:
         self._connection.commit()
 
     def create_budget(self, budget):
+        """Tallentaa budjetin tietokantaan.
+
+        Args:
+            budget: Budjetti, joka tallennetaan Budget-oliona.
+
+        Returns:
+                Budjetti, joka on tallennettu Budget-oliona.
+        """
+
         cursor = self._connection.cursor()
         cursor.execute("select name from sqlite_master where type='table' and name='budgets'")
         table_exists = cursor.fetchone() is not None
@@ -46,6 +66,12 @@ class BudgetRepository:
         return budget
 
     def find_budgets(self):
+        """Palauttaa kaikki budjetit.
+
+        Returns:
+            Palauttaa listana Budget-oliot.
+        """
+
         cursor = self._connection.cursor()
         cursor.execute("select * from budgets")
         rows = cursor.fetchall()
@@ -53,6 +79,15 @@ class BudgetRepository:
         return list(map(get_budget_row, rows))
 
     def find_by_user(self, user):
+        """Palauttaa käyttäjän budjetit.
+
+        Args:
+            user: Käyttäjä, jonka budjetit palautetaan.
+
+        Returns:
+            Palauttaa listana Budget-olioita.
+        """
+
         cursor = self._connection.cursor()
         cursor.execute(
             "select month, income, expense, user, budget_id from budgets where user = ?",
@@ -69,12 +104,21 @@ class BudgetRepository:
         return budgets
 
     def delete_budget(self, budget_id):
+        """Poistaa tietyn budjetin.
+
+        Args:
+            budget_id: Budjetin id, joka poistetaan.
+        """
+
         cursor = self._connection.cursor()
         cursor.execute("delete from budgets where budget_id = ?",
                        (budget_id,))
         self._connection.commit()
 
     def delete_budgets(self):
+        """Poistaa kaikki budjetit.
+        """
+
         cursor = self._connection.cursor()
         cursor.execute("delete from budgets")
         self._connection.commit()
