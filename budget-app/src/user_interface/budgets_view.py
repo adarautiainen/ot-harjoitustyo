@@ -21,7 +21,7 @@ class BudgetListView:
 
     def _initialize_budget(self, budget):
         budget_frame = tk.Frame(master=self._frame)
-        month_label = tk.Label(master=budget_frame, text=budget.month)
+        month_label = tk.Label(master=budget_frame, text=f"Month: {budget.month}")
         income_label = tk.Label(master=budget_frame, text=f"Income: {budget.income}")
         expense_label = tk.Label(master=budget_frame, text=f"Expense: {budget.expense}")
 
@@ -111,9 +111,9 @@ class BudgetsView:
             self._expense_entry.delete(0, constants.END)
 
     def _initialize_footer(self):
-        self._month_entry = tk.Entry(master=self._frame)
-        self._income_entry = tk.Entry(master=self._frame)
-        self._expense_entry = tk.Entry(master=self._frame)
+        self._month_entry = ttk.Entry(master=self._frame)
+        self._income_entry = ttk.Entry(master=self._frame)
+        self._expense_entry = ttk.Entry(master=self._frame)
 
         month_label = tk.Label(master=self._frame, text="Month:")
         income_label = tk.Label(master=self._frame, text="Income:")

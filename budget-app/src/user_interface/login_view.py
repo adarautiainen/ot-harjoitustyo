@@ -1,6 +1,5 @@
 from tkinter import ttk, StringVar, constants
 import tkinter as tk
-from tkinter import *
 from service.service_budget import service_budget, InvalidCredentialsError
 
 
@@ -43,13 +42,13 @@ class LoginView:
 
     def _initialize_username(self):
         username_label = tk.Label(master=self._frame, text="Username")
-        self._username_entry = tk.Entry(master=self._frame)
+        self._username_entry = ttk.Entry(master=self._frame)
         username_label.grid(row=1, column=0, padx=5, pady=5)
         self._username_entry.grid(row=1, column=1, sticky=(constants.E, constants.W), padx=5, pady=5)
 
     def _initialize_password(self):
         password_label = tk.Label(master=self._frame, text="Password")
-        self._password_entry = tk.Entry(master=self._frame, show="*")
+        self._password_entry = ttk.Entry(master=self._frame, show="*")
         password_label.grid(row=2, column=0, padx=5, pady=5)
         self._password_entry.grid(row=2, column=1, sticky=(constants.E, constants.W), padx=5, pady=5)
 
