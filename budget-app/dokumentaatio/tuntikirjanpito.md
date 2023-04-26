@@ -12,7 +12,7 @@
 | Päivä| Aika/mitä tehty |
 |-----:|-----------------|
 | 4.4. |3h/Graafinen käyttöliittymä |
-| 6.4. |1h/Budjetti toimintoja  |
+| 6.4. |1h/Budjetti toimintoja|
 
 **Viikko 15:**
 | Päivä| Aika/mitä tehty |
@@ -26,14 +26,17 @@
 |-----:|-----------------|
 | 17.4. |1h/Korjattu koodia niin, että kaikki testit toimii|
 | 19.4. |3h/Lisätty budjetin poistotoiminto, lisää testejä|
-| 20.4. |5h/Muokattu budjettia budjetiksi (kuukausi, tulot/menot)|
+| 20.4. |5h/Muokattu budjettia budjetiksi (kuukausi, tulot, menot)|
 | 22.4. |1h/Muokattu testit uusille ominaisuuksille|
 
 **Viikko 17:**
+| Päivä| Aika/mitä tehty |
+|-----:|-----------------|
+| 26.4. |2h/Docstring-dokumentaatio, arkkitehtuurikuvaus|
 
 **Viikko 18:**
 
 **Viikko 19:**
 
 **Yhteensä käytetty aika:**
-34h
+36h
