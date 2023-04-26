@@ -1,4 +1,6 @@
 from tkinter import ttk, StringVar, constants
+import tkinter as tk
+from tkinter import *
 from service.service_budget import service_budget, InvalidCredentialsError
 
 
@@ -40,23 +42,23 @@ class LoginView:
         self._error_label.grid_remove()
 
     def _initialize_username(self):
-        username_label = ttk.Label(master=self._frame, text="Username")
-        self._username_entry = ttk.Entry(master=self._frame)
+        username_label = tk.Label(master=self._frame, text="Username")
+        self._username_entry = tk.Entry(master=self._frame)
         username_label.grid(row=1, column=0, padx=5, pady=5)
         self._username_entry.grid(row=1, column=1, sticky=(constants.E, constants.W), padx=5, pady=5)
 
     def _initialize_password(self):
-        password_label = ttk.Label(master=self._frame, text="Password")
-        self._password_entry = ttk.Entry(master=self._frame)
+        password_label = tk.Label(master=self._frame, text="Password")
+        self._password_entry = tk.Entry(master=self._frame, show="*")
         password_label.grid(row=2, column=0, padx=5, pady=5)
         self._password_entry.grid(row=2, column=1, sticky=(constants.E, constants.W), padx=5, pady=5)
 
     def _initialize(self):
-        self._frame = ttk.Frame(master=self._root)
+        self._frame = tk.Frame(master=self._root)
         self._root.geometry("500x500")
 
         self._error_var = StringVar(self._frame)
-        self._error_label = ttk.Label(
+        self._error_label = tk.Label(
             master=self._frame,
             textvariable=self._error_var,
             foreground="orange"
@@ -66,15 +68,15 @@ class LoginView:
         self._initialize_username()
         self._initialize_password()
 
-        ttk.Label(master=self._frame).grid(row=2)
+        tk.Label(master=self._frame).grid(row=2)
 
-        login_button = ttk.Button(
+        login_button = tk.Button(
             master=self._frame,
             text="Login",
             command=self._login_handler
         )
 
-        user_button = ttk.Button(
+        user_button = tk.Button(
             master=self._frame,
             text="Create user",
             command=self._create_user

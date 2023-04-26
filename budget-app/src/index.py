@@ -1,9 +1,9 @@
-from tkinter import Tk
+import tkinter as tk
 from user_interface.ui import UI
 
 
 def main():
-    window = Tk()
+    window = tk.Tk()
     window.title("Budget application")
 
     ui_view = UI(window)
