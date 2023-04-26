@@ -10,6 +10,7 @@
 - Tehty: Budjetin poistotoiminto, testausta, ulkoasua
 
 **Viikko 6:**
+-Tehty: Docstring-dokumentaatiota
 
 **Viikko 7:**
 
