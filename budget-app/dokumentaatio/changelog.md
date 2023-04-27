@@ -10,7 +10,7 @@
 - Tehty: Budjetin poistotoiminto, budjettitestejä, sovelluksen ulkoasua
 
 **Viikko 6:**
-- Tehty: Budjettinäkymä selkeäksi
+- Tehty: Budjettinäkymä selkeäksi, lisätty uusi toiminto: menojen ja tulojen tasapaino
 
 **Viikko 7:**
 
