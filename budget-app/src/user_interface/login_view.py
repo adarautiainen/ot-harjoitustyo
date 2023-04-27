@@ -54,7 +54,7 @@ class LoginView:
 
     def _initialize(self):
         self._frame = tk.Frame(master=self._root)
-        self._root.geometry("500x500")
+        self._label_hello = tk.Label(master=self._frame, text="Hello! Login or create new user!", fg="deep pink")
 
         self._error_var = StringVar(self._frame)
         self._error_label = tk.Label(
@@ -62,12 +62,12 @@ class LoginView:
             textvariable=self._error_var,
             foreground="orange"
         )
-        self._error_label.grid(row=1, column=0, columnspan=2,padx=5, pady=5)
+        self._error_label.grid(row=1, column=0, columnspan=2, padx=5, pady=5)
+
+        self._label_hello.grid(row=0, column=0, columnspan=2, padx=5, pady=5)
 
         self._initialize_username()
         self._initialize_password()
-
-        tk.Label(master=self._frame).grid(row=2)
 
         login_button = tk.Button(
             master=self._frame,

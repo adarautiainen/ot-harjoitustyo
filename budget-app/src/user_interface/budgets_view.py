@@ -21,9 +21,9 @@ class BudgetListView:
 
     def _initialize_budget(self, budget):
         budget_frame = tk.Frame(master=self._frame)
-        month_label = tk.Label(master=budget_frame, text=f"Month: {budget.month}")
-        income_label = tk.Label(master=budget_frame, text=f"Income: {budget.income}")
-        expense_label = tk.Label(master=budget_frame, text=f"Expense: {budget.expense}")
+        month_label = tk.Label(master=budget_frame, text=f"Month: {budget.month}", fg="deep pink")
+        income_label = tk.Label(master=budget_frame, text=f"Income: {budget.income}", fg="snow")
+        expense_label = tk.Label(master=budget_frame, text=f"Expense: {budget.expense}", fg="snow")
 
         delete_button = tk.Button(
             master=budget_frame,
@@ -90,7 +90,7 @@ class BudgetsView:
 
     def _initialize_header(self):
         user_label = tk.Label(master=self._frame, text=f"You are logged in as {self._user.username}")
-        logout_button = tk.Button(master=self._frame, text="Logout", command=self._handle_logout)
+        logout_button = tk.Button(master=self._frame, text="Logout", width=3, command=self._handle_logout)
 
         user_label.grid(row=0, column=0, padx=5, pady=5, sticky=constants.W)
         logout_button.grid(row=0,
@@ -121,30 +121,30 @@ class BudgetsView:
 
         create_button = tk.Button(master=self._frame, text="Create", command=self._handle_create)
 
-        month_label.grid(row=2, column=0, padx=5, pady=2, sticky=constants.W)
-        income_label.grid(row=3, column=0, padx=5, pady=2, sticky=constants.W)
-        expense_label.grid(row=4, column=0, padx=5, pady=2, sticky=constants.W)
+        month_label.grid(row=2, column=0, padx=5, pady=5, sticky=constants.W)
+        income_label.grid(row=3, column=0, padx=5, pady=5, sticky=constants.W)
+        expense_label.grid(row=4, column=0, padx=5, pady=5, sticky=constants.W)
 
         self._month_entry.grid(
             row=2,
             column=1,
+            sticky=constants.W,
             padx=5,
-            pady=2,
-            sticky=(constants.E, constants.W)
+            pady=5
         )
         self._income_entry.grid(
             row=3,
             column=1,
+            sticky=constants.W,
             padx=5,
-            pady=2,
-            sticky=constants.EW
+            pady=5
         )
         self._expense_entry.grid(
             row=4,
             column=1,
+            sticky=constants.W,
             padx=5,
-            pady=2,
-            sticky=(constants.E, constants.W)
+            pady=5
         )
         create_button.grid(
             row=7,

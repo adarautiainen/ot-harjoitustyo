@@ -58,6 +58,7 @@ class CreateUser:
 
     def _initialize(self):
         self._frame = tk.Frame(master=self._root)
+        self._label_create = tk.Label(master=self._frame, text="Here you can create new user!", fg="deep pink")
 
         self._error_var = StringVar(self._frame)
         self._error_label = tk.Label(
@@ -65,7 +66,9 @@ class CreateUser:
             textvariable=self._error_var,
             foreground="orange"
         )
-        self._error_label.grid(row=1, column=0, columnspan=2,padx=5, pady=5)
+
+        self._error_label.grid(row=1, column=0, columnspan=2, padx=5, pady=5)
+        self._label_create.grid(row=0, column=0, columnspan=2, padx=5, pady=5)
 
         self._initialize_username()
         self._initialize_password()
