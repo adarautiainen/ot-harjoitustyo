@@ -20,10 +20,14 @@ class BudgetListView:
         self._frame.destroy()
 
     def _initialize_budget(self, budget):
-        budget_frame = tk.Frame(master=self._frame)
-        month_label = tk.Label(master=budget_frame, text=f"Month: {budget.month}", fg="deep pink")
-        income_label = tk.Label(master=budget_frame, text=f"Income: {budget.income}", fg="snow")
-        expense_label = tk.Label(master=budget_frame, text=f"Expense: {budget.expense}", fg="snow")
+        budget_frame = tk.Frame(master=self._frame, highlightbackground="lightblue", highlightthickness=1
+                                , width=600, height=600)
+        month_label = tk.Label(master=budget_frame, text=f"Month: {budget.month}",
+                               fg="snow")
+        income_label = tk.Label(master=budget_frame, text=f"Income: {budget.income}",
+                                fg="snow")
+        expense_label = tk.Label(master=budget_frame, text=f"Expenses: {budget.expense}",
+                                 fg="snow")
 
         delete_button = tk.Button(
             master=budget_frame,
@@ -36,8 +40,14 @@ class BudgetListView:
         income_label.grid(row=1, column=0, padx=5, pady=5, sticky=constants.W)
         expense_label.grid(row=2, column=0, padx=5, pady=5, sticky=constants.W)
         delete_button.grid(row=0, column=1, padx=5, pady=5, sticky=constants.EW)
+
+        budget_frame.grid_rowconfigure(0, weight=1)
+        budget_frame.grid_rowconfigure(1, weight=1)
+        budget_frame.grid_rowconfigure(2, weight=1)
         budget_frame.grid_columnconfigure(0, weight=1)
-        budget_frame.grid()
+        budget_frame.grid_columnconfigure(1, weight=1)
+
+        budget_frame.grid(padx=5, pady=5, sticky=tk.EW)
 
     def _initialize(self):
         self._frame = tk.Frame(master=self._root)
@@ -117,7 +127,7 @@ class BudgetsView:
 
         month_label = tk.Label(master=self._frame, text="Month:")
         income_label = tk.Label(master=self._frame, text="Income:")
-        expense_label = tk.Label(master=self._frame, text="Expense:")
+        expense_label = tk.Label(master=self._frame, text="Expenses:")
 
         create_button = tk.Button(master=self._frame, text="Create", command=self._handle_create)
 

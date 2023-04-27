@@ -58,7 +58,8 @@ class CreateUser:
 
     def _initialize(self):
         self._frame = tk.Frame(master=self._root)
-        self._label_create = tk.Label(master=self._frame, text="Here you can create new user!", fg="deep pink")
+        self._label_create = tk.Label(master=self._frame, text="Here you can create new user!",
+                                      fg="snow")
 
         self._error_var = StringVar(self._frame)
         self._error_label = tk.Label(
