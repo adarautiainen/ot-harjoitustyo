@@ -33,10 +33,11 @@
 | Päivä| Aika/mitä tehty |
 |-----:|-----------------|
 | 26.4. |4h/Docstring-dokumentaatio, arkkitehtuurikuvaus, ulkoasun muokkausta, budjettinäkymä paremmaksi|
+| 27.4. |3h/Yksittäisten budjettien ulkoasun parannus|
 
 **Viikko 18:**
 
 **Viikko 19:**
 
 **Yhteensä käytetty aika:**
-38h
+41h
