@@ -1,7 +1,7 @@
 # Vaatimusmäärittely
 
 ## Sovelluksen tarkoitus
-Sovelluksen avulla käyttäjät voivat tehdä omia budjetteja.
+Sovelluksen avulla käyttäjät voivat tehdä omia budjetteja. Budjetti tehdään tietylle kuukaudelle ja siihen lisätään kuukauden tulot ja menot. Sovellus myös näyttää tulojen ja menojen tasapainon.
 
 ## Käyttäjät
 Sovelluksella on vain yksi käyttäjärooli eli tavallinen käyttäjä.
