@@ -70,6 +70,8 @@ class BudgetsView:
         self._month_entry = None
         self._income_entry = None
         self._expense_entry = None
+        self._error_var = None
+        self._error_label = None
 
         self._initialize()
 
@@ -86,6 +88,13 @@ class BudgetsView:
     def _delete_budget(self, budget_id):
         service_budget.delete(budget_id)
         self._initialize_budget_list()
+
+    def _show_error(self, message):
+        self._error_var.set(message)
+        self._error_label.grid(row=1, column=1, columnspan=2, padx=5, pady=5)
+
+    def _remove_error(self):
+        self._error_label.grid_remove()
 
     def _initialize_budget_list(self):
         if self._budget_view:
@@ -114,14 +123,21 @@ class BudgetsView:
 
     def _handle_create(self):
         month = self._month_entry.get()
-        income = self._income_entry.get()
-        expense = self._expense_entry.get()
+
+        try:
+            income = int(self._income_entry.get())
+            expense = int(self._expense_entry.get())
+        except ValueError:
+            self._show_error("Income and expense have to be numbers!")
+            return
+
         if month and income and expense:
             service_budget.create_budget(month, income, expense)
             self._initialize_budget_list()
             self._month_entry.delete(0, constants.END)
             self._income_entry.delete(0, constants.END)
             self._expense_entry.delete(0, constants.END)
+            self._remove_error()
 
     def _initialize_footer(self):
         self._month_entry = ttk.Entry(master=self._frame)
@@ -174,6 +190,14 @@ class BudgetsView:
         self._initialize_footer()
         self._initialize_budget_list()
 
+        self._error_var = tk.StringVar(self._frame)
+        self._error_label = tk.Label(
+            master=self._frame,
+            textvariable=self._error_var,
+            foreground="orange"
+        )
+        self._error_label.grid(row=1, column=0, columnspan=2, padx=5, pady=5)
+
         self._budget_frame.grid(
             row=1,
             column=0,
@@ -183,3 +207,4 @@ class BudgetsView:
 
         self._frame.grid_columnconfigure(0, weight=1)
 
+        self._remove_error()

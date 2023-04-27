@@ -1,7 +1,6 @@
 from user_interface.login_view import LoginView
 from user_interface.create_user import CreateUser
 from user_interface.budgets_view import BudgetsView
-import tkinter as tk
 
 
 class UI:
