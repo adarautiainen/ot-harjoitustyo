@@ -7,7 +7,7 @@
 - Tehty: Budjettitoimintoja ja niille testejä, graafista käyttöliittymää, pylint lisätty, kirjautuminen/uloskirjautuminen ja tunnuksen luonti valmis
 
 **Viikko 5:**
-- Tehty: Budjetin poistotoiminto, testejä, sovelluksen ulkoasua
+- Tehty: Budjetin poistotoiminto, budjettitestejä, sovelluksen ulkoasua
 
 **Viikko 6:**
 - Tehty: Budjettinäkymä selkeäksi
