@@ -12,7 +12,8 @@ Ennen kirjautumista:
 - Käyttäjä voi kirjautua sisään (tehty)
 
 Kirjautumisen jälkeen:
-- Käyttäjä näkee omat budjetit (osittain tehty)
-- Käyttäjä voi luoda uuden budjetin (osittain tehty)
+- Käyttäjä näkee omat budjetit (tehty)
+- Käyttäjä näkee tulojen ja menojen tasapainon (tehty)
+- Käyttäjä voi luoda uuden budjetin (tehty)
 - Käyttäjä voi poistaa luomansa budjetin (tehty)
 - Käyttäjä voi kirjautua ulos (tehty)
