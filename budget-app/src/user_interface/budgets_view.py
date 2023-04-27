@@ -28,6 +28,8 @@ class BudgetListView:
                                 fg="snow")
         expense_label = tk.Label(master=budget_frame, text=f"Expenses: {budget.expense}",
                                  fg="snow")
+        plusminus_label = tk.Label(master=budget_frame, text=f"Balance: "
+                                                             f"{budget.income-budget.expense}")
 
         delete_button = tk.Button(
             master=budget_frame,
@@ -39,6 +41,7 @@ class BudgetListView:
         month_label.grid(row=0, column=0, padx=5, pady=5, sticky=constants.W)
         income_label.grid(row=1, column=0, padx=5, pady=5, sticky=constants.W)
         expense_label.grid(row=2, column=0, padx=5, pady=5, sticky=constants.W)
+        plusminus_label.grid(row=3, column=0, padx=5, pady=5, sticky=constants.W)
         delete_button.grid(row=0, column=1, padx=5, pady=5, sticky=constants.EW)
 
         budget_frame.grid_rowconfigure(0, weight=1)
