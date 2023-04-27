@@ -33,7 +33,7 @@
 | Päivä| Aika/mitä tehty |
 |-----:|-----------------|
 | 26.4. |4h/Docstring-dokumentaatio, arkkitehtuurikuvaus, ulkoasun muokkausta, budjettinäkymä paremmaksi|
-| 27.4. |4h/Yksittäisten budjettien ulkoasun parannus, tulojen ja menojen tasapaino|
+| 27.4. |4h/Yksittäisten budjettien ulkoasun parannus, tulojen ja menojen tasapaino (tarkastus, että tulot ja menot ovat numeroita) |
 
 **Viikko 18:**
 
