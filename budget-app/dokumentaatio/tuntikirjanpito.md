@@ -33,11 +33,12 @@
 | Päivä| Aika/mitä tehty |
 |-----:|-----------------|
 | 26.4. |4h/Docstring-dokumentaatio, arkkitehtuurikuvaus, ulkoasun muokkausta, budjettinäkymä paremmaksi|
-| 27.4. |4h/Yksittäisten budjettien ulkoasun parannus, tulojen ja menojen tasapaino (tarkastus, että tulot ja menot ovat numeroita) |
+| 27.4. |4h/Yksittäisten budjettien ulkoasun parannus, tulojen ja menojen tasapaino (tarkastus, että tulot ja menot ovat numeroita)|
+| 28.4. |1h/Lisätty scrollbar ikkunaan|
 
 **Viikko 18:**
 
 **Viikko 19:**
 
 **Yhteensä käytetty aika:**
-42h
+43h
