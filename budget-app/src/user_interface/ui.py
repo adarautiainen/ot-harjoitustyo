@@ -4,11 +4,21 @@ from user_interface.budgets_view import BudgetsView
 
 
 class UI:
+    """Luokka joka vastaa sovelluksen käyttöliittymästä"""
+
     def __init__(self, root):
+        """Luokan konstruktori. Luo uuden luokan, joka vastaa käyttöliittymästä.
+
+        Args:
+            root: Tkinter-elementti, käyttöliittymä alustetaan sen sisälle.
+        """
+
         self._root = root
         self._current = None
 
     def start(self):
+        """Käynnistää käyttöliittymän."""
+
         self._login_show()
 
     def _hide_current(self):

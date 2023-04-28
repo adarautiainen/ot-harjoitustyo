@@ -4,8 +4,17 @@ from service.service_budget import service_budget, UsernameExistsError
 
 
 class CreateUser:
+    """Luokka joka vastaa käyttäjän rekisteröitymisnäkymästä."""
 
     def __init__(self, root, create_user, show_login):
+        """Luokan konstruktori, joka luo uuden rekisteröitymisnäkymän.
+
+        Args:
+            root: Tkinter-elementti, näkymä alustetaan sen sisälle.
+            create_user: Arvo, jota kutsutaan kun käyttäjä luodaan.
+            show_login: Arvo, jota kutsutaan kun siirrytään kirjautumisnäkymään.
+        """
+
         self._root = root
         self._create_user = create_user
         self._show_login = show_login
@@ -18,9 +27,17 @@ class CreateUser:
         self._initialize()
 
     def grid(self, **kwargs):
+        """Näyttää näkymän.
+
+        Args:
+            **kwargs: Dictionary, jossa avaimet ovat grid-geometriahallinnan asetuksia.
+        """
+
         self._frame.grid(kwargs)
 
     def destroy(self):
+        """Tuhoaa näkymän."""
+
         self._frame.destroy()
 
     def _user_handler(self):

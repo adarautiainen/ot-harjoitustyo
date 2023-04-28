@@ -4,11 +4,20 @@ from service.service_budget import service_budget, InvalidCredentialsError
 
 
 class LoginView:
+    """Luokka joka vastaa kirjautumisnäkymästä."""
 
-    def __init__(self, root, login_handle, create_user):
+    def __init__(self, root, login_handle, create_user_handle):
+        """Luokan konstruktori, joka luo uuden kirjautumisnäkymän.
+
+        Args:
+            root: Tkinter-elementti, käyttöliittymä alustetaan sen sisälle.
+            login_handle: Arvo, jota kutsutaan kun käyttäjä kirjautuu sisään.
+            create_user_handle: Arvo, jota kutsutaan kun siirrytään uuden käyttäjän luomisnäkymään.
+        """
+
         self._root = root
         self._login_handle = login_handle
-        self._create_user = create_user
+        self._create_user_handle = create_user_handle
         self._frame = None
         self._username_entry = None
         self._password_entry = None
@@ -18,9 +27,17 @@ class LoginView:
         self._initialize()
 
     def grid(self, **kwargs):
+        """Näyttää näkymän.
+
+        Args:
+            **kwargs: Dictionary, jossa avaimet ovat grid-geometriahallinnan asetuksia.
+        """
+
         self._frame.grid(kwargs)
 
     def destroy(self):
+        """Tuhoaa ikkunan."""
+
         self._frame.destroy()
 
     def _login_handler(self):
@@ -79,7 +96,7 @@ class LoginView:
         user_button = tk.Button(
             master=self._frame,
             text="Create user",
-            command=self._create_user
+            command=self._create_user_handle
         )
 
         self._frame.grid_columnconfigure(1, weight=1, minsize=400)

@@ -4,8 +4,17 @@ from service.service_budget import service_budget
 
 
 class BudgetListView:
+    """Luokka joka vastaa budjettien listauksesta."""
 
     def __init__(self, root, budgets, delete_budget):
+        """Luokan konstruktori, joka luo uuden budjettilistausnäkymän.
+
+        Args:
+            root: Tkinter-elementti, näkymä alustetaan sen sisälle.
+            budgets: Budget-olioita, jotka näkymässä näytetään.
+            delete_budget: Arvo, jota kutsutaan kun budjetti poistetaan.
+        """
+
         self._root = root
         self._budgets = budgets
         self._frame = None
@@ -14,9 +23,17 @@ class BudgetListView:
         self._initialize()
 
     def grid(self, **kwargs):
+        """Näyttää näkymän.
+
+        Args:
+            **kwargs: Dictionary, jossa avaimet ovat grid-geometriahallinnan asetuksia.
+        """
+
         self._frame.grid(kwargs)
 
     def destroy(self):
+        """Tuhoaa näkymän."""
+
         self._frame.destroy()
 
     def _initialize_budget(self, budget):
@@ -59,7 +76,16 @@ class BudgetListView:
 
 
 class BudgetsView:
+    """Luokka joka vastaa budjettien lisäämisestä ja listauksesta."""
+
     def __init__(self, root, handle_logout):
+        """Luokan konstruktori, joka luo uuden budjettinäkymän.
+
+         Args:
+             root: Tkinter-elementti, käyttöliittymä alustetaan sen sisälle.
+             handle_logout: Arvo, jota kutsutaan kun käyttäjä kirjautuu ulos.
+         """
+
         self._root = root
         self._handle_logout = handle_logout
         self._user = service_budget.current_user()
@@ -76,9 +102,17 @@ class BudgetsView:
         self._initialize()
 
     def grid(self, **kwargs):
+        """Näyttää näkymän.
+
+        Args:
+            **kwargs: Dictionary, jossa avaimet ovat grid-geometriahallinnan asetuksia.
+        """
+
         self._frame.grid(kwargs)
 
     def destroy(self):
+        """Tuhoaa näkymän. """
+
         self._frame.destroy()
 
     def _logout_handle(self):
