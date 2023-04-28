@@ -180,7 +180,7 @@ class BudgetsView:
             column=1,
             padx=5,
             pady=2,
-            sticky=(constants.E, constants.W)
+            sticky=constants.EW
         )
 
     def _initialize(self):
