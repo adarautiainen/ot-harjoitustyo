@@ -6,6 +6,13 @@ Ohjelman koodin pakkausrakenne:
 
 <img width="412" alt="arkkitehtuuri" src="https://user-images.githubusercontent.com/114645764/231719989-e6e21d80-7371-4483-9021-d198ac6ba413.png">
 
+user_interface sisältää käyttöliittymästä vastaavan koodin, service siältää sovelluslogiikasta vastaavan koodin, repos sisältää tietojen pysyväistallennuksesta vastaavan koodin ja budget_user sisältää luokat Budget ja User.
+
+## Käyttöliittymä
+
+Käyttöliittymässä on kolme näkymää: kirjautuminen, uuden käyttäjän luominen ja budjettien listaus. Nämä näkymät on toteutettu omina luokkinaan ja näkymien 
+näyttämisestä vastaa luokka UI. Vain yksi näkymä on kerrallaan näkyvänä.
+
 ## Sovelluslogiikka
 
 Käyttäjiä ja käyttäjien budjetteja kuvaavat luokat User ja Budget:
@@ -24,7 +31,7 @@ classDiagram
       }
 ```
 
-Käyttöliittymän toiminnoille luokka BudgetService tarjoaa omat metodit. 
+Luokka BudgetService käyttää luokkia BudgetRepository ja UserRepository päästääkseen käyttämään käyttäjiä ja budjetteja. Käyttöliittymän toiminnoille luokka BudgetService tarjoaa omat metodit. 
 Metodeja on esimerkiksi: 
 
 ```login(username, password)```
@@ -36,6 +43,8 @@ Metodeja on esimerkiksi:
 ## Päätoiminnallisuudet sekvenssikaavioina
 
 ### Kirjautuminen
+
+Kun käyttäjä syöttää kirjautumisnäkymän käyttäjätunnuksen ja salasanan ja painaa Login-painiketta, sovelluksen kontrolli menee näin:
 
 ```mermaid
 sequenceDiagram
@@ -52,6 +61,8 @@ sequenceDiagram
 ```
 
 ### Käyttäjän luominen
+
+Kun käyttäjä syöttää uuden käyttäjän luomisnäkymässä käyttäjätunnuksen ja salasanan ja painaa Create user-painiketta, sovelluksen kontrolli menee näin:
 
 ```mermaid
 sequenceDiagram
@@ -73,6 +84,8 @@ sequenceDiagram
 
 ### Budjetin luominen
 
+Kun käyttäjä syöttää budjettinäkymässä kuukauden, tulot ja menot, ja painaa Create-painiketta, sovelluksen kontrolli menee näin:
+
 ```mermaid
 sequenceDiagram
   actor User
@@ -81,10 +94,14 @@ sequenceDiagram
   participant BudgetRepository
   participant budget
   User->>UI: click "Create"
-  UI->>BudgetService: create_budget("may", "1000", "500€")
+  UI->>BudgetService: create_budget("may", "1000", "500")
   BudgetService->>budget: Budget("may", "1000", "500", maija)
   BudgetService->>BudgetRepository: create_budget(budget)
   BudgetRepository-->>BudgetService: budget
   BudgetService-->>UI: budget
   UI->>UI: initialize_budget_list()
 ```
+
+## Tietojen tallennus 
+
+Luokat UserRepository ja BudgetRepository tallentavat tietoja SQLite-tietokantaan. Käyttäjät tallennetaan tauluun users ja budjetit tallennetaan tauluun budgets. Käyttäjien tallennukseen käytettävä taulu alustetaan initialize_database.py-tiedostossa ja budjettien tallennukseen käytettävä taulu alustetaan BudgetRepository-luokassa.
