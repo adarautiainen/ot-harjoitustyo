@@ -37,8 +37,11 @@
 | 28.4. |2h/Lisätty scrollbar ikkunaan, docstring dokumentaatiota lisää|
 
 **Viikko 18:**
+| Päivä| Aika/mitä tehty |
+|-----:|-----------------|
+| 2.5. |2h/Sovelluksen ulkoasua, dokumentaatiota|
 
 **Viikko 19:**
 
 **Yhteensä käytetty aika:**
-42h
+44h
