@@ -158,8 +158,10 @@ class BudgetsView:
         try:
             income = int(self._income_entry.get())
             expense = int(self._expense_entry.get())
+            if income <= 0 or expense <= 0:
+                self._show_error("Values cannot be zero or negative.")
         except ValueError:
-            self._show_error("Values you entered are not correct.")
+            self._show_error("Values cannot be empty.")
             return
 
         if month and income and expense:
