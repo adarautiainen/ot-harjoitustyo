@@ -45,4 +45,4 @@
 **Viikko 19:**
 
 **Yhteensä käytetty aika:**
-44h
+46h
