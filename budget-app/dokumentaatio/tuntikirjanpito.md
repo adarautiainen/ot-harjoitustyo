@@ -40,6 +40,7 @@
 | Päivä| Aika/mitä tehty |
 |-----:|-----------------|
 | 2.5. |2h/Sovelluksen ulkoasua, dokumentaatiota|
+| 4.5. |2h/Muokattu budjetin luomista niin, että menot ja tulot eivät voi olla <= 0, dokumentaatiota|
 
 **Viikko 19:**
 
