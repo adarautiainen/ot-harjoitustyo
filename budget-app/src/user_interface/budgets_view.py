@@ -42,7 +42,7 @@ class BudgetListView:
         month_label = tk.Label(master=budget_frame, text=f"Month: {budget.month}")
         income_label = tk.Label(master=budget_frame, text=f"Income: {budget.income}")
         expense_label = tk.Label(master=budget_frame, text=f"Expenses: {budget.expense}")
-        plusminus_label = tk.Label(master=budget_frame, text=f"Balance: "
+        balance_label = tk.Label(master=budget_frame, text=f"Balance: "
                                                              f"{budget.income-budget.expense}")
 
         delete_button = tk.Button(
@@ -55,7 +55,7 @@ class BudgetListView:
         month_label.grid(row=0, column=0, padx=5, pady=5, sticky=constants.W)
         income_label.grid(row=1, column=0, padx=5, pady=5, sticky=constants.W)
         expense_label.grid(row=2, column=0, padx=5, pady=5, sticky=constants.W)
-        plusminus_label.grid(row=3, column=0, padx=5, pady=5, sticky=constants.W)
+        balance_label.grid(row=3, column=0, padx=5, pady=5, sticky=constants.W)
         delete_button.grid(row=0, column=1, padx=5, pady=5, sticky=constants.EW)
 
         budget_frame.grid_rowconfigure(0, weight=1)
@@ -160,17 +160,18 @@ class BudgetsView:
             expense = int(self._expense_entry.get())
             if income <= 0 or expense <= 0:
                 self._show_error("Values cannot be zero or negative.")
+            elif income > 0 and expense > 0 and (month and income and expense):
+                service_budget.create_budget(month, income, expense)
+                self._initialize_budget_list()
+                self._month_entry.delete(0, constants.END)
+                self._income_entry.delete(0, constants.END)
+                self._expense_entry.delete(0, constants.END)
+                self._remove_error()
+            else:
+                self._show_error("Values you entered are not correct.")
         except ValueError:
-            self._show_error("Values cannot be empty.")
+            self._show_error("Values you entered are not correct.")
             return
-
-        if month and income and expense:
-            service_budget.create_budget(month, income, expense)
-            self._initialize_budget_list()
-            self._month_entry.delete(0, constants.END)
-            self._income_entry.delete(0, constants.END)
-            self._expense_entry.delete(0, constants.END)
-            self._remove_error()
 
     def _initialize_footer(self):
         self._month_entry = ttk.Entry(master=self._frame)
