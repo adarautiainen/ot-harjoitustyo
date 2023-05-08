@@ -43,6 +43,9 @@
 | 4.5. |2h/Muokattu budjetin luomista niin, että menot ja tulot eivät voi olla <= 0, dokumentaatiota|
 
 **Viikko 19:**
+| Päivä| Aika/mitä tehty |
+|-----:|-----------------|
+| 8.5. |1h/Sovelluksen ulkoasua|
 
 **Yhteensä käytetty aika:**
-46h
+47h
