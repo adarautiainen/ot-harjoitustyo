@@ -13,4 +13,4 @@
 - Tehty: Budjettinäkymä selkeäksi, lisätty uusi toiminto: menojen ja tulojen tasapaino
 
 **Viikko 7:**
-- Tehty: Ohjelma loppupalautukseen valmiiksi (dokumentaatio, ohjelman ulkoasua)
+- Tehty: Ohjelma loppupalautukseen valmiiksi (dokumentaatio, ohjelman viimeistely)
