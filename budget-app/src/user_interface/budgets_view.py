@@ -37,8 +37,7 @@ class BudgetListView:
         self._frame.destroy()
 
     def _initialize_budget(self, budget):
-        budget_frame = tk.Frame(master=self._frame, highlightbackground="limegreen", highlightthickness=1
-                                , width=600, height=600)
+        budget_frame = tk.Frame(master=self._frame, highlightbackground="limegreen", highlightthickness=1)
         month_label = tk.Label(master=budget_frame, text=f"Month: {budget.month}")
         income_label = tk.Label(master=budget_frame, text=f"Income: {budget.income}")
         expense_label = tk.Label(master=budget_frame, text=f"Expenses: {budget.expense}")
@@ -121,7 +120,7 @@ class BudgetsView:
 
     def _show_error(self, message):
         self._error_var.set(message)
-        self._error_label.grid(row=1, column=1, columnspan=2, padx=5, pady=5)
+        self._error_label.grid(row=3, column=1, columnspan=2, sticky=constants.E, padx=5, pady=5)
 
     def _remove_error(self):
         self._error_label.grid_remove()
@@ -141,15 +140,18 @@ class BudgetsView:
         self._budget_view.grid()
 
     def _initialize_header(self):
-        user_label = tk.Label(master=self._frame, text=f"You are logged in as {self._user.username}")
-        logout_button = tk.Button(master=self._frame, text="Logout", command=self._handle_logout)
+        header_frame = tk.Frame(master=self._frame)
+        user_label = tk.Label(master=header_frame, text=f"Logged in as {self._user.username}")
+        logout_button = tk.Button(master=header_frame, text="Logout", command=self._handle_logout)
 
         user_label.grid(row=0, column=0, padx=5, pady=5, sticky=constants.W)
         logout_button.grid(row=0,
                            column=1,
                            padx=5,
                            pady=5,
-                           sticky=constants.EW)
+                           sticky=constants.E)
+
+        header_frame.grid(padx=5, pady=5, sticky=tk.EW)
 
     def _handle_create(self):
         month = self._month_entry.get()
@@ -173,9 +175,9 @@ class BudgetsView:
             return
 
     def _initialize_footer(self):
-        self._month_entry = ttk.Entry(master=self._frame)
-        self._income_entry = ttk.Entry(master=self._frame)
-        self._expense_entry = ttk.Entry(master=self._frame)
+        self._month_entry = ttk.Entry(master=self._frame, width=13)
+        self._income_entry = ttk.Entry(master=self._frame, width=13)
+        self._expense_entry = ttk.Entry(master=self._frame, width=13)
 
         month_label = tk.Label(master=self._frame, text="Month:")
         income_label = tk.Label(master=self._frame, text="Income:")
@@ -183,36 +185,36 @@ class BudgetsView:
 
         create_button = tk.Button(master=self._frame, text="Create", command=self._handle_create)
 
-        month_label.grid(row=2, column=0, padx=5, pady=5, sticky=constants.W)
-        income_label.grid(row=3, column=0, padx=5, pady=5, sticky=constants.W)
-        expense_label.grid(row=4, column=0, padx=5, pady=5, sticky=constants.W)
+        month_label.grid(row=2, column=0, padx=1, pady=1, sticky=constants.W)
+        income_label.grid(row=3, column=0, padx=1, pady=1, sticky=constants.W)
+        expense_label.grid(row=4, column=0, padx=1, pady=1, sticky=constants.W)
 
         self._month_entry.grid(
             row=2,
-            column=1,
-            sticky=constants.W,
+            column=0,
+            sticky=constants.E,
             padx=5,
             pady=5
         )
         self._income_entry.grid(
             row=3,
-            column=1,
-            sticky=constants.W,
+            column=0,
+            sticky=constants.E,
             padx=5,
             pady=5
         )
         self._expense_entry.grid(
             row=4,
-            column=1,
-            sticky=constants.W,
+            column=0,
+            sticky=constants.E,
             padx=5,
             pady=5
         )
         create_button.grid(
-            row=7,
-            column=1,
+            row=5,
+            column=0,
             padx=5,
-            pady=2,
+            pady=5,
             sticky=constants.EW
         )
 
