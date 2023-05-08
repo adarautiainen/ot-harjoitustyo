@@ -48,7 +48,6 @@ class BudgetListView:
         delete_button = tk.Button(
             master=budget_frame,
             text="Delete",
-            width=2,
             command=lambda: self._delete_budget(budget.budget_id)
         )
 
@@ -143,7 +142,7 @@ class BudgetsView:
 
     def _initialize_header(self):
         user_label = tk.Label(master=self._frame, text=f"You are logged in as {self._user.username}")
-        logout_button = tk.Button(master=self._frame, text="Logout", width=1, command=self._handle_logout)
+        logout_button = tk.Button(master=self._frame, text="Logout", command=self._handle_logout)
 
         user_label.grid(row=0, column=0, padx=5, pady=5, sticky=constants.W)
         logout_button.grid(row=0,
