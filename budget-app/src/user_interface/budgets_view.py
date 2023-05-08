@@ -37,7 +37,7 @@ class BudgetListView:
         self._frame.destroy()
 
     def _initialize_budget(self, budget):
-        budget_frame = tk.Frame(master=self._frame, highlightbackground="orange", highlightthickness=1
+        budget_frame = tk.Frame(master=self._frame, highlightbackground="limegreen", highlightthickness=1
                                 , width=600, height=600)
         month_label = tk.Label(master=budget_frame, text=f"Month: {budget.month}")
         income_label = tk.Label(master=budget_frame, text=f"Income: {budget.income}")
