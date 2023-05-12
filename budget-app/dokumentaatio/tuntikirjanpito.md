@@ -46,6 +46,7 @@
 | Päivä| Aika/mitä tehty |
 |-----:|-----------------|
 | 8.5. |1h/Sovelluksen ulkoasua|
+| 12.5.|1h/Sovelluksen viimeistelyä|
 
 **Yhteensä käytetty aika:**
-47h
+50h
