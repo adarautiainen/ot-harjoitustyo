@@ -9,7 +9,7 @@ Sovelluksen avulla käyttäjät voivat tehdä omia budjetteja. Tämä sovellus o
 - [Testausdokumentti](https://github.com/adarautiainen/ot-harjoitustyo/blob/master/budget-app/dokumentaatio/testaus.md)
 - [Changelog](https://github.com/adarautiainen/ot-harjoitustyo/blob/master/budget-app/dokumentaatio/changelog.md)
 - [Tuntikirjanpito](https://github.com/adarautiainen/ot-harjoitustyo/blob/master/budget-app/dokumentaatio/tuntikirjanpito.md)
-- [Lopullinen release]
+- [Lopullinen release](https://github.com/adarautiainen/ot-harjoitustyo/releases/tag/loppupalautus)
 
 ## Asennus
 - Riippuvuuksien asentaminen komennolla: ```poetry install```
